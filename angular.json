@@ -8,7 +8,20 @@
   "projects": {
     "InvestmentProject": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "path": "/src/app/COmponents",
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "path": "/src/app/Guards",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "path": "/src/app/Services",
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -25,6 +38,8 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ]
           },
