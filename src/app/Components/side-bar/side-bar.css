@@ -1,0 +1,3 @@
+.button:not(.selected-background):hover *{
+    color: white;
+}
