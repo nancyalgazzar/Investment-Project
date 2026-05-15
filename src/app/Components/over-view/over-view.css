@@ -1,0 +1,15 @@
+.dark-color{
+      color: rgba(0, 0, 0, 0.6);  /* dark mode */
+}
+.light-color{  color: rgba(255, 255, 255, 0.6);  /* dark mode */
+}
+.outline{
+    border: 1px solid rgba(221, 201, 201, 0.6); /* dark mode */
+}
+.background{
+     background: linear-gradient(
+    to right,
+    rgba(202, 189, 41, 0.244),  /* primary at 5% opacity */
+     rgba(202, 189, 41, 0.15)                 /* fades to nothing */
+  );
+}

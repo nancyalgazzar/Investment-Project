@@ -8,3 +8,6 @@ app-header {
   flex: 1;
   min-width: 0;
 }
+:host *{
+  background: #030405;
+}

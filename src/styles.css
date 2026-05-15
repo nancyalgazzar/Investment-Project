@@ -1,7 +1,8 @@
 .backgroundColor{
-    background: #010f1f;
+    background: #030405;
 }
 *{
+
     margin: 0;
     /* border: red 2px solid; */
     box-sizing: border-box;
@@ -12,6 +13,8 @@
 .grey{
     color: #8E9299;
 }
+
+
 .golden-background{
     background: #D4AF37;
 }
@@ -24,9 +27,14 @@
 }
 .custom-border{
     border: 1px solid #8E9299;
-    box-sizing: border-box;
-
 }
+.bottom-border{
+    border-bottom: 1px solid #8E9299;
+}
+.right-border{
+    border-right: 1px solid #8E9299;
+}
+
 .fs-7 {
     font-size: 0.75rem;
 }
