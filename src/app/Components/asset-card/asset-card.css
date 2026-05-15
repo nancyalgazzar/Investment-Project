@@ -1,0 +1,20 @@
+img{
+    width: 3vw;
+    height: 5vh;
+    margin: 0; 
+padding: 0;  }
+
+.asset-card:hover{
+    background-color: #8e929933;
+    border-radius: 6px;
+}
+.asset-card:hover img{
+    outline: #D4AF37 1px solid;
+}
+.active-word{
+    color: #37d1d4;
+}
+.asset-card{
+height: 8vh;
+/* border-bottom: 1px solid #8E9299; */
+}

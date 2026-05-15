@@ -5,6 +5,7 @@
 }
 .outline{
     border: 1px solid rgba(221, 201, 201, 0.6); /* dark mode */
+    box-sizing: border-box;
 }
 .background{
      background: linear-gradient(
@@ -12,4 +13,12 @@
     rgba(202, 189, 41, 0.244),  /* primary at 5% opacity */
      rgba(202, 189, 41, 0.15)                 /* fades to nothing */
   );
+}
+.overflow{
+    box-sizing: border-box;
+}
+@media (width<900px) {
+    .overflow{
+        width: 100%;
+    }
 }
