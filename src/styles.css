@@ -1,8 +1,19 @@
 .backgroundColor{
     background: #010f1f;
 }
+*{
+    margin: 0;
+    /* border: red 2px solid; */
+    box-sizing: border-box;
+}
+.golden-outline{
+    border: 1px solid #D4AF37;
+}
 .grey{
     color: #8E9299;
+}
+.golden-background{
+    background: #D4AF37;
 }
 .golden{
     color: #D4AF37;
@@ -13,6 +24,7 @@
 }
 .custom-border{
     border: 1px solid #8E9299;
+    box-sizing: border-box;
 
 }
 .fs-7 {

@@ -1,0 +1,10 @@
+app-side-bar {
+  flex-shrink: 0;
+  padding: 0;
+}
+
+app-header {
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+}

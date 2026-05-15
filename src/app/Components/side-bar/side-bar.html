@@ -1,16 +1,11 @@
-<div class="  ">
-    <button
-      class="btn btn-secondary d-md-none position-fixed top-0 start-0  z-3 rounded-circle"
-      type="button"
-    (click)="showSidebar.update((d)=> !d)"
-    >
-      <i class="bi bi-list"></i>
-    </button>
-  <div class="backgroundColor custom-border col-3 col-md-3 col-lg-2 border border-secondary p-3 align-items-center flex-column gap-3 justify-content-between" [ngClass]="{'d-flex': showSidebar(),'d-none': !showSidebar(),'d-md-flex': true}" style="height: 100dvh;overflow-y: auto;">
-    <div class="w-100 " >
+<div class="col-auto" style=" flex-shrink: 0;">
+    <button  class="btn btn-secondary d-md-none position-absolute bottom-0 start-0  z-3 rounded-circle"  type="button"(click)="showSidebar.update((d)=> !d)">
+      <i class="bi bi-list"></i> </button>
+  <div class="backgroundColor custom-border border border-secondary p-3 align-items-center flex-column gap-3 justify-content-between" [ngClass]="{'d-flex': showSidebar(),'d-none': !showSidebar(),'d-md-flex': true}"  style="height: 100dvh; width: 15vw; min-width: 200px;  overflow-y: auto;">
+    <div class="" >
       <h2 class="fw-bold golden text-uppercase mb-1 big-text">AURELIAN</h2>
       <p class="text-uppercase grey m-0 small-text">MIDNIGHT SOVERIGN</p>
-      <div class="w-100 d-flex flex-column gap-3 fs-6 fs-md-5 pt-5 " style="overflow-y: auto;">
+      <div class="d-flex flex-column gap-3 fs-6 fs-md-5 pt-5 " style="overflow-y: auto;">
         <div
           class="button d-flex gap-2 p-2"
           [class.selected-background]="selected() == 'dashboard'"
@@ -98,7 +93,7 @@
         </div>
       </div>
     </div>
-    <div class="w-100" style="height: 15%;">
+    <div class="" style="height: 15%;">
       <hr class="border border-secondary" />
       <div class="d-flex gap-4">
         <img class="rounded-circle " style="width: 3rem; height: 3rem;" src="Images/avatar.avif">
