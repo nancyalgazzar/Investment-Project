@@ -17,8 +17,15 @@
 .overflow{
     box-sizing: border-box;
 }
+.right-side{
+    width: 50%
+}
 @media (width<900px) {
     .overflow{
         width: 100%;
+    }
+    .right-side{
+        width: 100% 
+
     }
 }
