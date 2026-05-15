@@ -13,7 +13,9 @@
 .grey{
     color: #8E9299;
 }
-
+.dim-background{
+    background: #5a5c6133;
+}
 
 .golden-background{
     background: #D4AF37;
