@@ -1,30 +1,36 @@
 .c1{
-    color: rgb(245, 245, 240);
+    color: #f5f5f0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .f-big{
     font-size: 3rem;
 }
 .c2{
-    color: rgb(89, 92, 96);
+    color: #595c60;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: end;
+}
 .search{
-    background-color: #070707;
+    background-color: #111111;
     border: 1px solid #232323;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 18px 22px;
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%;
+    width: 90%;
+    height: 50px;
 }
 .search input{
     background: transparent;
     border: none;
     outline: none;
-    color: white;
+    color: #f5f5f0;
     width: 100%;
     font-size: 15px;
 }
@@ -36,18 +42,45 @@
 .search:active, .search:focus-within{
     border-color: #D4AF37;
 }
+.search-icon:active, .search:focus-within .search-icon{
+    color: #D4AF37;
+}
 
 .filter-btn{
-    width: 72px;
-    height: 62px;
-    border-radius: 20px;
+    width: 55px;
+    height: 50px;
+    border-radius: 10px;
     border: 1px solid #232323;
-    background-color: #070707;
+    background-color: #111111;
     color: #8a8a8a;
     font-size: 24px;
     transition: 0.3s;
 }
 .filter-btn:hover{
+    border-color: #D4AF37;
+    color: #D4AF37;
+}
+.category{
+    display: flex;
+    gap: 15px;
+}
+.category-btn{
+    background-color: #111111;
+    border: 1px solid #232323;
+    border-radius: 10px;
+    color: #8a8a8a;
+    font-size: 14px;
+    /* width: 12%;   */
+    padding: 10px 0;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+.active-btn{
+    background-color: #D4AF37;
+    color: #111111;
+}
+.category-btn:active, .category-btn:hover{
     border-color: #D4AF37;
     color: #D4AF37;
 }

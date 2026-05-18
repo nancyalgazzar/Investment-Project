@@ -3,28 +3,44 @@
   <!-- <div class="col-lg-2">
         <app-side-bar></app-side-bar>
     </div> -->
-  <div class="">
-    <!-- <app-header></app-header> -->
-    <div class="container-fluid m-4">
-      <p class="c1 f-big">Primary Marketplace</p>
-      <div class="row col-lg-12 justify-content-between">
-        <p class="col-lg-6 c2">
-          Exclusive investment opportunities vetted by our proprietary AI and specialized asset
-          managers for the Sovereign Tier.
-        </p>
-        <div class="col-lg-5 col-12 ">
-          <form>
-            <div class="search">
-              <i class="bi bi-search search-icon"></i>
-              <input type="text" placeholder="Search by location, industry, yield..." />
-            </div>
-            <button class="filter-btn">
-              <i class="bi bi-funnel"></i>
-            </button>
-          </form>
+  <!-- <app-header></app-header> -->
+  <div class="container m-5 mt-2">
+    <p class="c1 f-big">Primary Marketplace</p>
+    <div class="row col-lg-12 justify-content-between">
+      <p class="col-lg-6 c2">
+        Exclusive investment opportunities vetted by our proprietary AI and specialized asset
+        managers for the Sovereign Tier.
+      </p>
+      <div class="row col-lg-5 col-12">
+        <div class="wrapper">
+          <div class="search col-lg-8 col-10">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" placeholder="Search by location, industry, yield..." />
+          </div>
+          <button class="filter-btn col-lg-4 col-2">
+            <i class="bi bi-funnel"></i>
+          </button>
         </div>
       </div>
     </div>
-  </div>
+    <div class="row col-lg-12 my-5 category">
+      <button class="col-lg-2 col-3 category-btn active-btn">All Assets</button>
+      <button class="col-lg-2 col-3 category-btn">Real Estate</button>
+      <button class="col-lg-2 col-3 category-btn">Venture Capital</button>
+      <button class="col-lg-2 col-3 category-btn">Art & Collectibles</button>
+      <button class="col-lg-2 col-3 category-btn">Private Equity</button>
+    </div>
+    <div class="row">
 
+        <div class=" col-lg-4 col-10 my-5">
+            <app-project-card></app-project-card>
+        </div>
+        <div class=" col-lg-4 col-10 my-5">
+            <app-project-card></app-project-card>
+        </div>
+        <div class=" col-lg-4 col-10 my-5">
+            <app-project-card></app-project-card>
+        </div>
+    </div>
+  </div>
 </div>
