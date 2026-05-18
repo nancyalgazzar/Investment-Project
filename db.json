@@ -1,0 +1,16 @@
+{
+  "users": [{ "id": 1, "name": "Omar Madbouly", "email": "omar@aurelian.com", "role": "user" }],
+  "projects": [
+    {
+      "id": 101,
+      "name": "The Meridian Exchange",
+      "category": "Real Estate",
+      "total_price": 5000000
+    },
+    { "id": 102, "name": "Swiss Vault Gold", "category": "Gold", "total_price": 2000000 }
+  ],
+  "user_projects": [
+    { "id": 1, "userId": 1, "projectId": 101, "invested_amount": 700000 },
+    { "id": 2, "userId": 1, "projectId": 102, "invested_amount": 300000 }
+  ]
+}
