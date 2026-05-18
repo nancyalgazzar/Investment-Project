@@ -1,6 +1,7 @@
 html, body{
     background-color: rgb(5, 5, 5);
     color: white;
+    box-sizing: border-box;
 }
  
 .backgroundColor{

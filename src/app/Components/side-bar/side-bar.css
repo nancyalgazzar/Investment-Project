@@ -3,7 +3,7 @@
   left: 0;
   top: 0;
   height: 100dvh;
-  width: 17vw;
+  /* width: 17vw; */
   min-width: 200px;
   transform: translateX(-100%);      
   transition: transform 0.3s ease;
