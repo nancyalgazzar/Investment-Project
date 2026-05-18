@@ -15,7 +15,7 @@ export const routes: Routes = [
   {
 path: 'home',
 component: Home,
-    // canActivate: [userExistGuard]
+canActivate: [userExistGuard],
 
 children:[
   {path:"",
