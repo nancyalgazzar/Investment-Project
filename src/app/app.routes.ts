@@ -11,11 +11,12 @@ export const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
-    // canActivate: [userExistGuard]
   },
   {
 path: 'home',
 component: Home,
+    // canActivate: [userExistGuard]
+
 children:[
   {path:"",
     redirectTo:"dashboard",
