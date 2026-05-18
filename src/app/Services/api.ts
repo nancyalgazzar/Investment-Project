@@ -9,8 +9,8 @@ export class ApiService {
   private http = inject(HttpClient);
   private baseUrl = 'http://localhost:3000';
 
-  // Fetches a user's logged investment records from the relation link map
   getUserInvestments(userId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/user_projects?userId=${userId}`);
+    // The &_expand=project trick combines the investment with the project details
+    return this.http.get<any[]>(`${this.baseUrl}/user_projects?userId=${userId}&_expand=project`);
   }
 }

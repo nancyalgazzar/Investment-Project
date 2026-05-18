@@ -1,13 +1,18 @@
-<div class="p-0 my-2 ">
-  <div class="d-flex justify-content-between  align-items-center" style="width: 95%;">
+<div class="p-0 my-2">
+  <div class="d-flex justify-content-between align-items-center" style="width: 95%">
     <h4 class="text-white">Asset Holdings</h4>
     <a class="fs-7 grey text-uppercase align-self-end" routerLink="">Detailed Audit</a>
   </div>
+
   <div class="backgroundColor m-2 holdings custom-border">
-    <app-asset-card></app-asset-card>
-    <hr class="m-0 custom-border" />
-    <app-asset-card></app-asset-card>
-    <hr class="m-0 custom-border" />
-    <app-asset-card></app-asset-card>
+    @for (investment of myInvestments; track investment.id; let isLast = $last) {
+      <app-asset-card [data]="investment"></app-asset-card>
+
+      @if (!isLast) {
+        <hr class="m-0 custom-border" />
+      }
+    } @empty {
+      <p class="grey text-center p-4 m-0">No active assets found.</p>
+    }
   </div>
 </div>
