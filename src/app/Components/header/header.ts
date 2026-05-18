@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from './../../Services/api';
+import { RouterLink } from '@angular/router'; // Gamal
 @Component({
   selector: 'app-header',
   imports: [CurrencyPipe],
