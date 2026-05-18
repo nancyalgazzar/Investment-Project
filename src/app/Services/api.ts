@@ -11,6 +11,6 @@ export class ApiService {
 
   // Fetches a user's logged investment records from the relation link map
   getUserInvestments(userId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/user_projects?userId=${userId}`);
+    return this.http.get<any[]>(`${this.baseUrl}/user_projects?userId=${userId}&_expand=project`);
   }
 }
