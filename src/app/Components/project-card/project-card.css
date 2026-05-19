@@ -53,11 +53,16 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
-.progress{
-    height: 7px;
-    background-color: #D4AF37;
-    border-radius: 10px;
-}
 .progress-bar{
+    width: 90%;
+    height: 5px;
+    background-color: #4d4c4c;
+    border-radius: 15px;
+    padding: 0px;
+}
+.progress{
     background-color: #D4AF37;
+    border-radius: 15px;
+    text-align: start;  
+    width: 90%;
 }
