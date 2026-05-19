@@ -1,0 +1,66 @@
+<button class="chat-toggle-btn" (click)="chatbotService.toggleChat()">
+    <i class="bi bi-robot"></i>
+</button>
+
+<div class="chatbot-container" [class.chat-open]="chatbotService.isOpen()"
+    [class.chat-closed]="!chatbotService.isOpen()">
+
+    <div class="chat-header">
+
+        <div>
+            <h5 class="m-0 golden">AI Investment Assistant</h5>
+            <small class="grey">Online</small>
+        </div>
+
+        <button class="btn text-light" (click)="chatbotService.toggleChat()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+    </div>
+
+    <div class="chat-messages" #messagesContainer>
+
+        @if(chatbotService.messages().length < 1) {
+
+        <div class="welcome-container">
+
+            <p class="grey">
+                Ask me anything about investing.
+            </p>
+
+            <div class="suggestions">
+
+                <button class="suggestion-btn" (click)="chatbotService.sendPrompt('Explain ETFs')">
+                    Explain ETFs
+                </button>
+
+                <button class="suggestion-btn" (click)="chatbotService.sendPrompt('What is diversification?')">
+                    What is diversification?
+                </button>
+
+                <button class="suggestion-btn" (click)="chatbotService.sendPrompt('Explain compound interest')">
+                    Explain compound interest
+                </button>
+
+            </div>
+
+        </div>
+
+        }
+
+        @for(message of chatbotService.messages(); track message.id) {
+
+        <app-chatbot-message [message]="message">
+        </app-chatbot-message>
+
+        }
+
+        @if(chatbotService.isTyping()) {
+        <app-typing-indicator></app-typing-indicator>
+        }
+
+    </div>
+
+    <app-chatbot-input></app-chatbot-input>
+
+</div>
