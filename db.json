@@ -55,9 +55,7 @@
       "password": "Maysoon@123",
       "role": "user",
       "id": "VZaW4UKTwao"
-    },{
-      "id": 1, "name": "Omar Madbouly", "email": "omar@aurelian.com", "role": "user" }
-    
+    }
   ],
   "projects": [
     {

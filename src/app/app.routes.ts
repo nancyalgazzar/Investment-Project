@@ -7,32 +7,12 @@ import { Home } from './Pages/home/home';
 import { userExistGuard } from './Guards/user-exist-guard';
 
 export const routes: Routes = [
+  // --- PUBLIC ROUTES (No guards needed) ---
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home',
+    component: Home, // The Landing Page is the default front door
   },
-  {
-path: 'home',
-component: Home,
-canActivate: [userExistGuard],
-
-children:[
-  {path:"",
-    redirectTo:"dashboard",
-    pathMatch:"full"
-  },
-{
-    path: 'dashboard',
-    component: DashBoard,
-  },
-  {
-    path: 'projects',
-    component: ProjectList,
-  },
-]
-  },
-  
   {
     path: 'login',
     component: LoginComponent,
@@ -41,5 +21,22 @@ children:[
     path: 'signup',
     component: SignUpComponent,
   },
-  
+
+  // --- PROTECTED ROUTES (Locked behind the Guard) ---
+  {
+    path: 'dashboard',
+    component: DashBoard,
+    canActivate: [userExistGuard], // Protects the dashboard
+  },
+  {
+    path: 'projects',
+    component: ProjectList,
+    canActivate: [userExistGuard], // Protects the project list
+  },
+
+  // --- FALLBACK ROUTE ---
+  {
+    path: '**', // If a user types a random URL, send them back to the landing page
+    redirectTo: '',
+  }
 ];
