@@ -8,6 +8,7 @@ import { LoginComponent } from './Pages/log-in/log-in';
 import { Home } from './Pages/home/home';
 import { LandingComponent } from './Pages/landing/landing';
 import { userExistGuard } from './Guards/user-exist-guard';
+import { DepositFunds } from './Pages/deposit-funds/deposit-funds';
 
 export const routes: Routes = [
   {
@@ -26,7 +27,7 @@ export const routes: Routes = [
   },
 
   // --- PROTECTED ROUTES (Locked behind the Guard) ---
- {
+  {
     path: 'home',
     component: Home, // <-- This adds the Sidebar, Header, and Chatbot!
     canActivate: [userExistGuard], // Protects everything inside
@@ -34,7 +35,7 @@ export const routes: Routes = [
       {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'dashboard',
@@ -56,8 +57,17 @@ export const routes: Routes = [
   },
 
   // --- FALLBACK ---
+
+  {
+    path: 'deposit', //Gamal
+    component: DepositFunds,
+  },
   {
     path: '**',
-    redirectTo: ''
-  }
+    redirectTo: '',
+  },
+  {
+    path: 'projects',
+    component: ProjectList,
+  },
 ];

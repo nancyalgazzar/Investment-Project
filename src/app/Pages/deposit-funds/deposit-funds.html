@@ -1,0 +1,38 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 85dvh;">
+  <div class="card shadow-lg backgroundColor custom-border rounded-4" style="width: 100%; max-width: 550px;">
+
+    <div class="card-header border-0 bg-transparent text-center pt-4">
+      <h2 class="golden m-0 text-uppercase big-text fw-bold">Deposit Funds</h2>
+      <p class="grey small-text mt-2">Securely add liquidity to your Sovereign account.</p>
+    </div>
+
+    <div class="card-body px-5 pb-5 pt-3">
+
+      <div class="mb-4">
+        <label for="amount" class="form-label text-uppercase fs-8 grey mb-2">Deposit Amount (USD)</label>
+        <div class="input-group">
+          <span class="input-group-text golden-background border-0 text-dark fw-bold fs-5">$</span>
+          <input
+            type="number"
+            id="amount"
+            class="form-control text-white custom-border py-2 fs-5"
+            style="background-color: #111111;"
+            [(ngModel)]="depositAmount"
+            min="10"
+          />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center dim-background p-3 rounded-3 mb-4 custom-border">
+        <p class="m-0 grey text-uppercase fs-8">Total to Pay</p>
+        <p class="m-0 golden fw-bold fs-5">{{ depositAmount | currency:'USD' }}</p>
+      </div>
+
+      <hr class="custom-border my-4" />
+
+      <p class="text-center text-uppercase fs-8 grey mb-3">Select Payment Method</p>
+      <div id="paypal-button-container" style="min-height: 150px; z-index: 1;"></div>
+
+    </div>
+  </div>
+</div>
