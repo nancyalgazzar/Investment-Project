@@ -1,13 +1,14 @@
-<div class="d-flex justify-content-between px-3  asset-card  align-items-center dim-background ">
+<div class="d-flex justify-content-between px-3 asset-card align-items-center dim-background">
   <div class="d-flex gap-2 align-items-center">
-    <img src="Images/avatar.avif" />
+    <img src="Images/avatar.avif" alt="Asset Avatar" />
     <div>
-      <p class="fs-6 text-white m-0">Dubai Waterfront Marina</p>
-      <p class="fs-8 grey">SOVEREIGN ESTATE</p>
+      <p class="fs-6 text-white m-0">{{ data?.project?.name }}</p>
+
+      <p class="fs-8 grey text-uppercase">{{ data?.project?.category }}</p>
     </div>
   </div>
   <div>
-    <p class="fs-6 text-white m-0 mb-1">{{ assetAmount | currency: 'EGP' }}</p>
-    <p class="fs-8  active-word">Active</p>
+    <p class="fs-6 text-white m-0 mb-1">{{ data?.invested_amount | currency: 'EGP' }}</p>
+    <p class="fs-8 active-word">Active</p>
   </div>
 </div>

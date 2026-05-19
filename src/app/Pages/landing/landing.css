@@ -1,0 +1,48 @@
+.landing-container {
+  min-height: 100vh;
+  background-color: #121212;
+  padding: 2rem;
+}
+
+.gold-text {
+  color: #D4AF37;
+}
+
+.gold-accent-bar {
+  width: 60px;
+  height: 4px;
+  background-color: #D4AF37;
+  border-radius: 2px;
+}
+
+.max-width-text {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.btn-gold {
+  background-color: #D4AF37;
+  border: 2px solid #D4AF37;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #b5952f;
+  border-color: #b5952f;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.tracking-wide {
+  letter-spacing: 2px;
+}

@@ -1,0 +1,16 @@
+<div class="chat-input-container">
+
+<textarea
+  [(ngModel)]="message"
+  placeholder="Ask AI assistant..."
+  (keydown)="handleKeyDown($event)"
+></textarea>
+
+  <button
+    class="send-btn"
+    (click)="sendMessage()"
+  >
+    <i class="bi bi-send-fill"></i>
+  </button>
+
+</div>

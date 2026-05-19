@@ -1,0 +1,240 @@
+.container {
+  color: #8a8a8a;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+  margin-left: 20px;
+  gap: 8px;
+}
+.category p::highlight {
+  color: #d4af37;
+}
+.small-text {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8a8a8a;
+  text-decoration: none;
+}
+.bi {
+  font-weight: bold;
+  margin-right: 4px;
+}
+.small-text:hover {
+  color: #d4af37;
+  cursor: pointer;
+}
+.title {
+  font-size: 80px;
+  color: #f5f5f0;
+  letter-spacing: 0px;
+  margin: 0px;
+  line-height: 0.99;
+}
+.category {
+  display: flex;
+  gap: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+.category-btn {
+  background-color: #111111;
+  border: 1px solid #232323;
+  color: #8a8a8a;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+.active-btn {
+  background-color: #051e1a;
+  color: #16d8b4;
+  box-shadow: #0fb294;
+  border: 1px solid #0fb294;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+.location-icon {
+  color: #d4af37;
+  margin: 0px;
+}
+.shield-icon {
+  color: #16d8b4;
+  margin: 0px;
+}
+.tags {
+  display: flex;
+  gap: 45px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.gallery {
+  position: relative;
+  height: 85vh;
+  border-radius: 35px;
+  overflow: hidden;
+  border: 1px solid #1d1d1d;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+  padding: 0px;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery:hover .main-image {
+  transform: scale(1.1);
+  transition: 2s;
+}
+/* .gallery:hover .main-image {
+  transform: scale(1.1);
+  transition: 2s;
+} */
+.images {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  display: flex;
+  gap: 14px;
+}
+
+.card-img {
+  width: 95px;
+  height: 75px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+  border-color: #d4af37;
+  transition: 0.3s;
+}
+.desc-card{
+    background-color: #111111;
+    border: 2px solid #232323;
+    border-radius: 20px;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    color: #8E9299;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    padding: 30px;
+    overflow: hidden;
+    font-size: 19px;
+    
+    
+}
+.desc-title{
+    color: #f5f5f0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #f5f5f0;
+    letter-spacing: 1px;
+    position: relative;
+    margin-left: 50px;
+}
+.desc-title span{
+    color: #d4af37;
+    width: 40px;
+    height: 1px;
+    border: 1px solid #d4af37;
+    margin-right: 15px;
+    position: absolute;
+    top: 20px;
+    left: -50px;
+}
+.text span{
+    color: #d4af37;
+    font-size: 30px;
+}
+.data-card {
+  background-color: #111111;
+  border: 2px solid #232323;
+  border-radius: 20px;
+  padding: 15px;
+  color: #f5f5f0;
+  font-weight: 100;
+  /* padding: 0px 30px;  */
+  overflow: hidden;
+  font-size: 19px;
+  
+}
+.data-title{
+    color: #f5f5f0;
+    font-size: 30px;
+    color: #f5f5f0;
+    letter-spacing: 1px;
+}
+.icon-box{
+    color: #16d8b4;
+    margin: 0px;
+    background-color: #0f2824;
+    border: 1px solid #467b71;
+    border-radius: 5px;
+    /* padding: 5px 15px; */
+    padding: 3px;
+    width: 55px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+.icon-box1{
+    color: #d4af37;
+    margin: 0px;
+    background-color: #242115;
+    border: 1px solid #4c4a42;
+    border-radius: 5px;
+    /* padding: 5px 15px; */
+    padding: 3px;
+    width: 50px;
+    height: 45px;
+    font-size: 25px;
+    text-align: center;
+}
+.card-body{
+    padding: 0px;
+}
+.data{
+    /* gap: 45px; */
+    letter-spacing: 1px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: bold;
+}
+.data-cards{
+    /* gap: 5px; */
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.xsmall-text{
+    font-size: 10px;
+    color: #77797c;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

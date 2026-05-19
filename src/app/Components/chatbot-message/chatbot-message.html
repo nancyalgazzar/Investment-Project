@@ -1,0 +1,12 @@
+<div
+  class="message-container"
+  [class.user]="message.role === 'user'"
+>
+
+  <div class="message-bubble">
+
+    <div [innerHTML]="formattedMessage"></div>
+
+  </div>
+
+</div>

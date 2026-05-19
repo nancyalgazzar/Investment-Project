@@ -1,1 +1,95 @@
-<p>details-card works!</p>
+<div class="row container mt-5">
+  <div class="row col-lg-8 justify-content-between">
+    <a class="small-text" routerLink="['/projects']"
+      ><i class="bi bi-arrow-left"></i>BACK TO SOVEREIGN MARKET</a
+    >
+    <div class="my-5 category">
+      <button class="active-btn">SOVEREIGN GUARD TIER</button>
+      <button class="category-btn">PRIME ESTATE</button>
+    </div>
+    <p class="title">Dubai Waterfront Marina</p>
+    <div class="my-4 tags">
+      <div class="d-flex gap-2">
+        <i class="bi bi-geo-alt location-icon"></i>
+        <p class="">Dubai, United Arab Emirates</p>
+      </div>
+      <span class=""> | </span>
+      <div class="d-flex gap-2">
+        <i class="bi bi-shield-check shield-icon"></i>
+        <p class="">Insured Principal Protection</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <img id="mainImage" class="main-image" [src]="mainImage" alt="Main Image" />
+
+      <div class="images">
+        <div class="cards col-12">
+          @for (image of images; track $index) {
+            <div class="card-img col-2" (click)="changeImage(image)">
+              <img [src]="image" />
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="desc-card my-5">
+      <p class="desc-title"><span></span>Strategic Overview</p>
+      <p class="text fst-italic">
+        <span>P</span>ositioned at the nexus of global maritime trade and luxury tourism, the Dubai
+        Waterfront Marina acquisition represents a cornerstone of our quarterly Sovereign Guard
+        allocations. Featuring double-digit established yield and government-backed infrastructure
+        security, it is a primary defensive asset for the upcoming fiscal cycle.
+      </p>
+    </div>
+    <div class="row data-cards my-5">
+      <div class="data-card col-lg-6 col-12 py-4 px-5">
+        <div class="card-title my-5 row">
+          <div class="icon-box icon-teal col-3">
+            <i class="bi bi-bar-chart-line-fill"></i>
+          </div>
+          <h3 class="card-heading col-9">Yield Matrix</h3>
+        </div>
+        <div class="card-body">
+          <div class="data my-3 row">
+            <p class="xsmall-text col-7">Projected Annualrol</p>
+            <p class="price col-5">15.4% - 17.2%</p>
+          </div>
+          <div class="data my-3">
+            <p class="xsmall-text">Liquidity Schedule</p>
+            <p class="price">Quarterly Exit</p>
+          </div>
+          <div class="data my-3">
+            <p class="xsmall-text">Minimum Stake</p>
+            <p class="price">$50,000</p>
+          </div>
+        </div>
+      </div>
+      <div class="data-card col-lg-5 col-12 py-4 px-5">
+        <div class="card-title my-5 row">
+          <div class="icon-box1 icon-teal col-3">
+            <i class="bi bi-file-earmark-text-fill"></i>
+          </div>
+          <h3 class="card-heading col-9">Asset Audit</h3>
+        </div>
+        <div class="card-body">
+          <div class="data my-3 row">
+            <p class="xsmall-text col-7">Sovereign Verification</p>
+            <p class="price col-5">Certified</p>
+          </div>
+          <div class="data my-3">
+            <p class="xsmall-text">Physical Classification</p>
+            <p class="price">Tier-1 Elite</p>
+          </div>
+          <div class="data my-3">
+            <p class="xsmall-text">Insurance Coverage</p>
+            <p class="price">Principal 100%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 mt-5">
+      <app-units></app-units>
+  </div>
+</div>
