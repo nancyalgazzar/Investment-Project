@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
-type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk';
+type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk' | 'projects';
 @Component({
   selector: 'app-side-bar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './side-bar.html',
   styleUrl: './side-bar.css',
 })

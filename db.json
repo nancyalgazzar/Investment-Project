@@ -55,6 +55,14 @@
       "password": "Maysoon@123",
       "role": "user",
       "id": "VZaW4UKTwao"
+    },
+    {
+      "firstName": "fatma",
+      "lastName": "haggag",
+      "email": "fatma@gmail.com",
+      "password": "Fatma@123",
+      "role": "admin",
+      "id": "wxjd26M"
     }
   ],
   "projects": [
@@ -64,11 +72,26 @@
       "category": "Real Estate",
       "total_price": 5000000
     },
-    { "id": 102, "name": "Swiss Vault Gold", "category": "Gold", "total_price": 2000000 }
+    {
+      "id": 102,
+      "name": "Swiss Vault Gold",
+      "category": "Gold",
+      "total_price": 2000000
+    }
   ],
   "user_projects": [
-    { "id": 1, "userId": 1, "projectId": 101, "invested_amount": 700000 },
-    { "id": 2, "userId": 1, "projectId": 102, "invested_amount": 300000 }
+    {
+      "id": 1,
+      "userId": 1,
+      "projectId": 101,
+      "invested_amount": 700000
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "projectId": 102,
+      "invested_amount": 300000
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
