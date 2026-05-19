@@ -43,12 +43,11 @@ export class LoginComponent {
               );
 
               console.log('Logged in successfully');
-              console.log(res); 
+              console.log(res);
 
-              this.router.navigate(['/dashboard']);
-
+this.router.navigate(['/home/dashboard']);
             } else {
-              console.log(res); 
+              console.log(res);
               alert('Invalid email or password');
             }
           },
