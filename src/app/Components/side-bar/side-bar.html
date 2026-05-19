@@ -27,7 +27,9 @@
           [class.golden]="selected() == 'dashboard'"
           [class.grey]="selected() != 'dashboard'"></i>
         <span [class.golden]="selected() == 'dashboard'"
-          [class.grey]="selected() != 'dashboard'">Dashboard</span>
+          [class.grey]="selected() != 'dashboard'"
+          class="btn"
+          [routerLink]="'/home/dashboard'">Dashboard</span>
       </div>
       <div class="button d-flex gap-2 p-2"
         [class.selected-background]="selected() == 'projects'"
@@ -37,6 +39,7 @@
           [class.grey]="selected() != 'projects'"></i>
         <span [class.golden]="selected() == 'projects'"
           [class.grey]="selected() != 'projects'"
+          class="btn"
           [routerLink]="'/home/projects'">Projects</span>
       </div>
       <div class="button d-flex gap-2 p-2"
@@ -46,7 +49,7 @@
           [class.golden]="selected() == 'identity'"
           [class.grey]="selected() != 'identity'"></i>
         <span [class.golden]="selected() == 'identity'"
-          [class.grey]="selected() != 'identity'">Identity</span>
+          [class.grey]="selected() != 'identity'" class="btn">Identity</span>
       </div>
       <div class="button d-flex gap-2 p-2"
         [class.selected-background]="selected() == 'risk'"
@@ -55,7 +58,7 @@
           [class.golden]="selected() == 'risk'"
           [class.grey]="selected() != 'risk'"></i>
         <span [class.golden]="selected() == 'risk'"
-          [class.grey]="selected() != 'risk'">Risk Profile</span>
+          [class.grey]="selected() != 'risk'" class="btn">Risk Profile</span>
       </div>
       <div class="button d-flex gap-2 p-2"
         [class.selected-background]="selected() == 'profile'"
@@ -64,7 +67,7 @@
           [class.golden]="selected() == 'profile'"
           [class.grey]="selected() != 'profile'"></i>
         <span [class.golden]="selected() == 'profile'"
-          [class.grey]="selected() != 'profile'">Profile</span>
+          [class.grey]="selected() != 'profile'" class="btn">Profile</span>
       </div>
       <div class="button d-flex gap-2 p-2"
         [class.selected-background]="selected() == 'security'"
@@ -73,7 +76,7 @@
           [class.golden]="selected() == 'security'"
           [class.grey]="selected() != 'security'"></i>
         <span [class.golden]="selected() == 'security'"
-          [class.grey]="selected() != 'security'">Security</span>
+          [class.grey]="selected() != 'security'" class="btn">Security</span>
       </div>
     </div>
   </div>

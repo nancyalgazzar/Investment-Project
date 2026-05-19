@@ -40,3 +40,6 @@
 .button:not(.selected-background):hover * {
   color: white;
 }
+.btn{
+  cursor: pointer;
+}
