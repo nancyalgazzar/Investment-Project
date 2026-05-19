@@ -22,9 +22,11 @@
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.1",
+    "json-server": "^1.0.0-beta.15",
     "ng2-charts": "^10.0.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@angular/build": "^21.2.8",

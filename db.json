@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "firstName": "carol",
+      "lastName": "maged",
+      "email": "carolmaged@gmail.com",
+      "password": "123456789",
+      "role": "user",
+      "id": "ppyOZU_g4QQ"
+    },
+    {
+      "firstName": "ahmed",
+      "lastName": "mohamed",
+      "email": "ahmed@gmail.com",
+      "password": "147852369",
+      "role": "user",
+      "id": "K8uHexSl2XQ"
+    },
+    {
+      "firstName": "amin",
+      "lastName": "samy",
+      "email": "amin@gmail.com",
+      "password": "Amin@123",
+      "role": "user",
+      "id": "wfG75sbXyr0"
+    },
+    {
+      "firstName": "amira",
+      "lastName": "maged",
+      "email": "amira@gmail.com",
+      "password": "Amira@123",
+      "role": "user",
+      "id": "xu_kRiMvRqI"
+    },
+    {
+      "firstName": "sameh",
+      "lastName": "samir",
+      "email": "sameh@gmail.com",
+      "password": "Sameh@123",
+      "role": "user",
+      "id": "ZRLDYGIeBLw"
+    },
+    {
+      "firstName": "arwa",
+      "lastName": "mohamed",
+      "email": "arwa@gmail.com",
+      "password": "Arwa@123",
+      "role": "user",
+      "id": "iyw8-lefq_o"
+    },
+    {
+      "firstName": "maysoon",
+      "lastName": "hany",
+      "email": "maysoon@gmail.com",
+      "password": "Maysoon@123",
+      "role": "user",
+      "id": "VZaW4UKTwao"
+    }
+  ],
+  "projects": [
+    {
+      "id": 101,
+      "name": "The Meridian Exchange",
+      "category": "Real Estate",
+      "total_price": 5000000
+    },
+    { "id": 102, "name": "Swiss Vault Gold", "category": "Gold", "total_price": 2000000 }
+  ],
+  "user_projects": [
+    { "id": 1, "userId": 1, "projectId": 101, "invested_amount": 700000 },
+    { "id": 2, "userId": 1, "projectId": 102, "invested_amount": 300000 }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
