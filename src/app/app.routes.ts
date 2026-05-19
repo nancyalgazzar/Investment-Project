@@ -1,3 +1,4 @@
+import { PayPal } from './Components/pay-pal/pay-pal';
 import { Routes } from '@angular/router';
 import { DashBoard } from './Pages/dash-board/dash-board';
 import { ProjectList } from './Components/project-list/project-list';
@@ -44,7 +45,15 @@ export const routes: Routes = [
         path: 'projects',
         component: ProjectList,
       },
-    ],
+      {
+        path: 'details',
+        component: DetailsCard,
+      },
+      {
+        path: 'details/:id',
+        component: PayPal,
+      }
+    ]
   },
 
   // --- FALLBACK ---

@@ -55,6 +55,14 @@
       "password": "Maysoon@123",
       "role": "user",
       "id": "VZaW4UKTwao"
+    },
+    {
+      "firstName": "fatma",
+      "lastName": "haggag",
+      "email": "fatma@gmail.com",
+      "password": "Fatma@123",
+      "role": "admin",
+      "id": "wxjd26M"
     }
   ],
   "projects": [

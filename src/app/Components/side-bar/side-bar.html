@@ -30,6 +30,16 @@
           [class.grey]="selected() != 'dashboard'">Dashboard</span>
       </div>
       <div class="button d-flex gap-2 p-2"
+        [class.selected-background]="selected() == 'projects'"
+        (click)="select('projects')">
+        <i class="bi bi-fingerprint"
+          [class.golden]="selected() == 'projects'"
+          [class.grey]="selected() != 'projects'"></i>
+        <span [class.golden]="selected() == 'projects'"
+          [class.grey]="selected() != 'projects'"
+          [routerLink]="'/home/projects'">Projects</span>
+      </div>
+      <div class="button d-flex gap-2 p-2"
         [class.selected-background]="selected() == 'identity'"
         (click)="select('identity')">
         <i class="bi bi-fingerprint"
