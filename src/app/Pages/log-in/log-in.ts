@@ -45,7 +45,7 @@ export class LoginComponent {
               console.log('Logged in successfully');
               console.log(res);
 
-this.router.navigate(['/home/dashboard']);
+              this.router.navigate(['/home/dashboard']);
             } else {
               console.log(res);
               alert('Invalid email or password');
