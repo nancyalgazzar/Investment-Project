@@ -22,7 +22,8 @@
       "email": "amin@gmail.com",
       "password": "Amin@123",
       "role": "user",
-      "id": "wfG75sbXyr0"
+      "id": "wfG75sbXyr0",
+      "liquidity": 11000
     },
     {
       "firstName": "amira",
@@ -67,7 +68,7 @@
   ],
   "projects": [
     {
-      "id": 101,
+      "id": "101",
       "name": "The Meridian Exchange",
       "description": "A luxury residential development in the heart of the city, offering high-end apartments and amenities.",
       "category": "Real Estate",
@@ -81,7 +82,7 @@
       "location": "Dubai, United Arab Emirates"
     },
     {
-      "id": 102,
+      "id": "102",
       "name": "Gold Investment Fund",
       "description": "A fund that invests in gold and gold-related assets, providing investors with exposure to the precious metal.",
       "category": "Gold",
@@ -95,7 +96,7 @@
       "location": "London, United Kingdom"
     },
     {
-      "id": 103,
+      "id": "103",
       "name": "Tech Startup Equity",
       "description": "An opportunity to invest in a promising tech startup, offering potential for high returns as the company grows.",
       "category": "Stocks",
@@ -110,16 +111,64 @@
     }
   ],
   "user_projects": [
-    { "id": 1, "userId": 1, "projectId": 101, "invested_amount": 700000 },
-    { "id": 2, "userId": 1, "projectId": 102, "invested_amount": 300000 },
-    { "id": 3, "userId": 1, "projectId": 103, "invested_amount": 400000 }
+    {
+      "id": "1",
+      "userId": 1,
+      "projectId": 101,
+      "invested_amount": 700000
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "projectId": 102,
+      "invested_amount": 300000
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "projectId": 103,
+      "invested_amount": 400000
+    },
+    {
+      "id": "Yjlg1kGR_II",
+      "userId": "wfG75sbXyr0",
+      "projectId": 101,
+      "invested_amount": 6000
+    },
+    {
+      "id": "ER2IDzEc2qk",
+      "userId": "wfG75sbXyr0",
+      "projectId": 102,
+      "invested_amount": 2000
+    },
+    {
+      "id": "yqu3EDyLnd0",
+      "userId": "wfG75sbXyr0",
+      "projectId": 103,
+      "invested_amount": 7000
+    }
   ],
   "categories": [
-    { "id": 1, "name": "Real Estate" },
-    { "id": 2, "name": "Gold" },
-    { "id": 3, "name": "Stocks" },
-    { "id": 4, "name": "Bonds" },
-    { "id": 5, "name": "Cryptocurrency" }
+    {
+      "id": "1",
+      "name": "Real Estate"
+    },
+    {
+      "id": "2",
+      "name": "Gold"
+    },
+    {
+      "id": "3",
+      "name": "Stocks"
+    },
+    {
+      "id": "4",
+      "name": "Bonds"
+    },
+    {
+      "id": "5",
+      "name": "Cryptocurrency"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -31,27 +31,36 @@ export class OverView implements OnInit {
     maintainAspectRatio: false
   };
 
+
   ngOnInit() {
-    this.apiService.getUserInvestments(1).subscribe({
-      next: (investments) => {
-        this.activeAssetsCount = investments.length; // Counts how many projects you have
+    // Get the current logged-in user
+    const userStr = localStorage.getItem('currentUser');
 
-        if (investments.length > 0) {
-          // This grabs JUST the money amounts to draw the chart slices
-          const variableDataPoints = investments.map(item => Number(item.invested_amount));
+    if (userStr) {
+      const user = JSON.parse(userStr);
 
-          this.chartData = {
-            datasets: [{
-              data: variableDataPoints,
-              backgroundColor: ['#D4AF37', '#137ABF', '#4edea3'],
-              cutout: '80%',
-            }],
-          };
+      // Pass the real user.id to the chart calculations
+      this.apiService.getUserInvestments(user.id).subscribe({
+        next: (investments) => {
+          this.activeAssetsCount = investments.length; // Counts how many projects you have
+
+          if (investments.length > 0) {
+            // This grabs JUST the money amounts to draw the chart slices
+            const variableDataPoints = investments.map(item => Number(item.invested_amount));
+
+            this.chartData = {
+              datasets: [{
+                data: variableDataPoints,
+                backgroundColor: ['#D4AF37', '#137ABF', '#4edea3'],
+                cutout: '80%',
+              }],
+            };
+          }
+
+          this.cdr.detectChanges(); // Tell Angular to redraw the chart!
         }
-
-        this.cdr.detectChanges(); // Tell Angular to redraw the chart!
-      }
-    });
+      });
+    }
   }
 
   // This plugin draws the text in the middle of the doughnut hole

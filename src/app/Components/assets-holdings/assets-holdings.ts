@@ -16,11 +16,19 @@ export class AssetsHoldings implements OnInit {
   myInvestments: any[] = [];
 
   ngOnInit() {
-    this.apiService.getUserInvestments(1).subscribe({
-      next: (investments) => {
-        this.myInvestments = investments;
-        this.cdr.detectChanges();
-      }
-    });
+    // Get the current logged in user
+    const userStr = localStorage.getItem('currentUser');
+
+    if (userStr) {
+      const user = JSON.parse(userStr);
+
+      // Fetch data for this specific user
+      this.apiService.getUserInvestments(user.id).subscribe({
+        next: (investments) => {
+          this.myInvestments = investments;
+          this.cdr.detectChanges();
+        }
+      });
+    }
   }
 }
