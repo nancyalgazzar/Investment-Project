@@ -22,13 +22,20 @@ export class Header implements OnInit {
   }
 
   loadUserData() {
+    // const userStr = localStorage.getItem('currentUser');
+
+    // if (userStr) {
+    //   const user = JSON.parse(userStr);
+
+    //   // Fetch real liquidity from the Users table
+    //   this.apiService.getUser(user.id).subscribe({
     const userStr = localStorage.getItem('currentUser');
-
     if (userStr) {
-      const user = JSON.parse(userStr);
+      const userObj = JSON.parse(userStr);
+      const user = Array.isArray(userObj) ? userObj[0] : userObj;
 
-      // Fetch real liquidity from the Users table
-      this.apiService.getUser(user.id).subscribe({
+      this.apiService.getUser(user.id).subscribe({    //   // Fetch real liquidity from the Users table
+
         next: (userData) => {
           this.avaliableLiquidity = userData.liquidity || 0;
           this.calculateNetWorth();

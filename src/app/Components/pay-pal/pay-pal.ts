@@ -97,8 +97,8 @@ export class PayPal implements OnInit{
 
 
     if (userStr) {
-      const user = JSON.parse(userStr);
-      currentUserId = user.id;
+      const userObj = JSON.parse(userStr);
+      const user = Array.isArray(userObj) ? userObj[0] : userObj;      currentUserId = user.id;
     }
 
     const newInvestment = {

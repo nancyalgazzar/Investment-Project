@@ -68,6 +68,11 @@ export class PaymentService {
                         `Deposit of $${amountDeposited} successful!`,
                         'success'
                       );
+                      this.notificationService.addmessage(            // Success
+
+                      `Deposit successful! Thank you, ${details.payer.name.given_name}.`,
+                      'success'
+            );
                     },
                     error: () => this.notificationService.addmessage('Failed to update account balance.', 'error')
                   });
@@ -76,11 +81,7 @@ export class PaymentService {
             } else {
                this.notificationService.addmessage('User session not found.', 'error');
             }
-            this.notificationService.addmessage(            // Success
 
-              `Deposit successful! Thank you, ${details.payer.name.given_name}.`,
-              'success'
-            );
           });
         },
         onError: (err: any) => {

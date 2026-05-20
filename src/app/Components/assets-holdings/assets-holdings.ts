@@ -17,13 +17,19 @@ export class AssetsHoldings implements OnInit {
 
   ngOnInit() {
     // Get the current logged in user
+    // const userStr = localStorage.getItem('currentUser');
+
+    // if (userStr) {
+    //   const user = JSON.parse(userStr);
+
+    //   this.apiService.getUserInvestments(user.id).subscribe({
     const userStr = localStorage.getItem('currentUser');
-
     if (userStr) {
-      const user = JSON.parse(userStr);
+      const userObj = JSON.parse(userStr);
+      const user = Array.isArray(userObj) ? userObj[0] : userObj;
 
-      // Fetch data for this specific user
-      this.apiService.getUserInvestments(user.id).subscribe({
+      this.apiService.getUserInvestments(user.id).subscribe({     // Fetch data for this specific user
+
         next: (investments) => {
           this.myInvestments = investments;
           this.cdr.detectChanges();

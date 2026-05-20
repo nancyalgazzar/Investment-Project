@@ -86,9 +86,10 @@ export class SignUpComponent {
       lastName: this.signUpForm.value.lastName,
       email: this.signUpForm.value.email,
       password: this.signUpForm.value.password,
-      role:this.signUpForm.value.role
+      role:this.signUpForm.value.role,
+      liquidity: 0
     };
-    
+
 
     this.authService.register(formData).subscribe({
       next: (res: any) => {
