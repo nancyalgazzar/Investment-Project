@@ -76,6 +76,16 @@
         <span [class.golden]="selected() == 'security'"
           [class.grey]="selected() != 'security'" >Security</span>
       </div>
+      <div class="button d-flex gap-2 p-2 btn"
+          (click)="logout()">
+
+        <i class="bi bi-box-arrow-right grey"></i>
+
+        <span class="grey">
+          Sign Out
+        </span>
+
+      </div>
     </div>
   </div>
 

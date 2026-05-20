@@ -29,5 +29,6 @@ export class ProjectsService {
   }
   deleteProject(projectId: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/projects/${projectId}`);
+    
   }
 }

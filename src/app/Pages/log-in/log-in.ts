@@ -37,10 +37,12 @@ export class LoginComponent {
             // if(res!=null) // response is an array that is empty if login is wrong or array contains valid returned user json so i get length of array in check and if there is valid logged in user the array length become > 0
             if (res.length > 0) { //reponse is array [] or [{user}]
 
-              localStorage.setItem(
-                'currentUser',
-                JSON.stringify(res)
-              );
+              // localStorage.setItem(
+              //   'currentUser',
+              //   JSON.stringify(res)
+              // );
+              
+              this.authService.saveUser(res[0]); // save the first user object in the array to local storage
 
               console.log('Logged in successfully');
               console.log(res);

@@ -27,4 +27,14 @@ export class AuthenticationService {
       `${this.apiUrl}?email=${email}&password=${password}`
     );
   }
+
+  saveUser(user: any): void {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
+
+  // logout
+  logout(): void {
+    localStorage.removeItem('currentUser');
+  }
+
 }

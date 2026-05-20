@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { AuthenticationService } from '../../Services/authentication-service';
 
 type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk' | 'projects';
 @Component({
@@ -14,6 +15,18 @@ export class SideBar {
 
   select(item: SidebarItem) {
     this.selected.set(item);
+  }
+
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
+
+  logout() {
+
+    this.authService.logout();
+    this.router.navigate(['']);
+
   }
 
   openSidebar() { this.showSidebar.set(true); }
