@@ -1,103 +1,80 @@
 <div class="signup-container">
-
   <div class="signup-card">
-
-    <h1 class="title">AURELIAN</h1>
+    <h1 class="title">Investment</h1>
     <p class="subtitle">Create Your Identity</p>
 
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-
       <!-- First Name -->
       <div class="input-group">
         <label>First Name</label>
-        <input
-          type="text"
-          formControlName="firstName"
-          placeholder="Enter first name"
-        />
-        @if(firstName?.invalid && firstName?.touched) {
+        <input type="text" formControlName="firstName" placeholder="Enter first name" />
+        @if (firstName?.invalid && firstName?.touched) {
           <p class="error">First name is required</p>
         }
-
-
       </div>
 
       <!-- Last Name -->
       <div class="input-group">
-
         <label>Last Name</label>
-        <input
-          type="text"
-          formControlName="lastName"
-          placeholder="Enter last name"
-        />
+        <input type="text" formControlName="lastName" placeholder="Enter last name" />
 
-        @if(lastName?.invalid && lastName?.touched) {
+        @if (lastName?.invalid && lastName?.touched) {
           <p class="error">Last name is required</p>
         }
-
       </div>
 
       <!-- Email -->
       <div class="input-group">
-
         <label>Email Address</label>
-        <input
-          type="email"
-          formControlName="email"
-          placeholder="Enter your email"
-        />
+        <input type="email" formControlName="email" placeholder="Enter your email" />
 
-        @if(email?.invalid && email?.touched) {
+        @if (email?.invalid && email?.touched) {
           <p class="error">Valid email is required</p>
         }
-
       </div>
 
       <!-- Password -->
       <div class="input-group">
         <label>Password</label>
-          <input
-            [type]="showPassword ? 'text' : 'password'"
-            formControlName="password"
-            placeholder="password"
-          />
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="password"
+        />
 
-       @if(password?.errors?.['required'] && password?.touched) {
+        @if (password?.errors?.['required'] && password?.touched) {
           <p class="error">Password is required</p>
         }
-        @if(password?.errors?.['minlength'] && password?.touched) {
+        @if (password?.errors?.['minlength'] && password?.touched) {
           <p class="error">Password must be at least 8 characters</p>
         }
-        @if(!password?.errors?.['minlength'] && password?.errors?.['pattern'] && password?.touched) {
+        @if (
+          !password?.errors?.['minlength'] && password?.errors?.['pattern'] && password?.touched
+        ) {
           <div class="error">
             Password must contain:
 
-          <ul>
-            <li>1 uppercase letter</li>
-            <li>1 lowercase letter</li>
-            <li>1 number</li>
-            <li>1 special character</li>
-          </ul>
+            <ul>
+              <li>1 uppercase letter</li>
+              <li>1 lowercase letter</li>
+              <li>1 number</li>
+              <li>1 special character</li>
+            </ul>
           </div>
         }
-
-
       </div>
       <!-- Confirm Password -->
       <div class="input-group">
-
         <label>Confirm Password</label>
-          <input
-            [type]="showConfirmPassword ? 'text' : 'password'"
-            formControlName="confirmPassword"
-            placeholder="confirm"
-          />
+        <input
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+          placeholder="confirm"
+        />
 
-          @if(signUpForm.errors?.['passwordMismatch'] && confirmPassword?.touched) {
-  <p class="error">Passwords do not match</p>
-}
-
+        @if (signUpForm.errors?.['passwordMismatch'] && confirmPassword?.touched) {
+          <p class="error">Passwords do not match</p>
+        }
       </div>
 
       <!-- Role -->
@@ -109,18 +86,13 @@
           <option value="admin">Admin</option>
         </select>
 
-        @if(role?.invalid && role?.touched) {
+        @if (role?.invalid && role?.touched) {
           <p class="error">Role is required</p>
         }
       </div>
 
       <!-- Submit -->
-      <button type="submit"[disabled]="signUpForm.invalid">
-        Create Account →
-      </button>
-
+      <button type="submit" [disabled]="signUpForm.invalid">Create Account →</button>
     </form>
-
   </div>
-
 </div>
