@@ -81,7 +81,6 @@
     color: #D4AF37
 }
 
-/* Images */
 .images-list {
   display: flex;
   flex-direction: column;
@@ -131,20 +130,17 @@
   overflow: auto;
   height: 80dvh;
   
-  /* 1. Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
 
-  /* 2. Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 .add-image-btn:hover {
   background: #c0aa6220;
 }
 
-/* Actions */
 .form-actions {
   display: flex;
   justify-content: flex-end;
