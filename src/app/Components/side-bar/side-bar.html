@@ -59,11 +59,12 @@
         class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'identity'"
         (click)="select('identity')"
-      >
+        [routerLink]="'/not-found'"
+        >
         <i
-          class="bi bi-fingerprint"
-          [class.golden]="selected() == 'identity'"
-          [class.grey]="selected() != 'identity'"
+        class="bi bi-fingerprint"
+        [class.golden]="selected() == 'identity'"
+        [class.grey]="selected() != 'identity'"
         ></i>
         <span [class.golden]="selected() == 'identity'" [class.grey]="selected() != 'identity'"
           >Identity</span
@@ -73,6 +74,7 @@
         class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'risk'"
         (click)="select('risk')"
+        [routerLink]="'/not-found'"
       >
         <i
           class="bi bi-pie-chart"
@@ -87,6 +89,7 @@
         class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'profile'"
         (click)="select('profile')"
+        [routerLink]="'/not-found'"
       >
         <i
           class="bi bi-card-text"
@@ -101,11 +104,13 @@
         class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'security'"
         (click)="select('security')"
+        [routerLink]="'/not-found'"
       >
         <i
           class="bi bi-shield-check"
           [class.golden]="selected() == 'security'"
           [class.grey]="selected() != 'security'"
+          
         ></i>
         <span [class.golden]="selected() == 'security'" [class.grey]="selected() != 'security'"
           >Security</span

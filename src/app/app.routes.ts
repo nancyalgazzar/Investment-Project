@@ -11,6 +11,7 @@ import { DepositFunds } from './Pages/deposit-funds/deposit-funds';
 import { CreateProject } from './Components/create-project/create-project';
 import { adminGuard } from './Guards/admin-guard';
 import { DetailsCard } from './Pages/details-card/details-card';
+import { NotFound } from './Components/not-found/not-found';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFound,
   },
 
   // --- PROTECTED ROUTES (Locked behind the Guard) ---
@@ -61,6 +66,10 @@ export const routes: Routes = [
         path: 'paypal/:id&:check',
         component: PayPal,
       },
+      {
+        path: '**',
+        redirectTo: 'not-found',
+      }
     ],
   },
 
@@ -71,12 +80,11 @@ export const routes: Routes = [
     component: DepositFunds,
   },
   {
-    path: '**',
-    redirectTo: '',
-    pathMatch: "full"
-  },
-  {
     path: 'projects',
     component: ProjectList,
   },
+  {
+    path: '**',
+    redirectTo: 'not-found'
+  }
 ];
