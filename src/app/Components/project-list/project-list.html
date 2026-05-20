@@ -1,9 +1,4 @@
-<!-- <app-footer></app-footer> -->
 <div class="row">
-  <!-- <div class="col-lg-2">
-        <app-side-bar></app-side-bar>
-    </div> -->
-  <!-- <app-header></app-header> -->
   <div class="container m-5 mt-2">
     <p class="c1 f-big">Primary Marketplace</p>
     <div class="row col-lg-12 justify-content-between">
@@ -24,15 +19,24 @@
       </div>
     </div>
     <div class="row col-lg-12 my-5 category">
-      <button class="col-lg-2 col-3 active-btn">All Assets</button>
+      @for(cate of categories; track $index) {
+        <button class="col-lg-2 col-3 category-btn" (click)="filter(cate.name)" [class.active-btn]="selectedCategory === cate.name">
+          {{cate.name}}
+        </button>
+      }
+      <!-- <button class="col-lg-2 col-3 active-btn">All Assets</button>
       <button class="col-lg-2 col-3 category-btn">Real Estate</button>
       <button class="col-lg-2 col-3 category-btn">Venture Capital</button>
       <button class="col-lg-2 col-3 category-btn">Art & Collectibles</button>
-      <button class="col-lg-2 col-3 category-btn">Private Equity</button>
+      <button class="col-lg-2 col-3 category-btn">Private Equity</button> -->
     </div>
     <div class="row">
-
-        <div class=" col-lg-4 col-10 my-5">
+      @for(project of projects; track $index) {
+        <div class="col-lg-4 col-10 my-5">
+          <app-project-card [data]="project"></app-project-card>
+        </div>
+      }
+        <!-- <div class=" col-lg-4 col-10 my-5">
             <app-project-card></app-project-card>
         </div>
         <div class=" col-lg-4 col-10 my-5">
@@ -40,7 +44,7 @@
         </div>
         <div class=" col-lg-4 col-10 my-5">
             <app-project-card></app-project-card>
-        </div>
+        </div> -->
     </div>
   </div>
 </div>

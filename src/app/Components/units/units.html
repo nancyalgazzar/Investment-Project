@@ -6,7 +6,7 @@
     </div>
     <div class="row justify-content-between my-3">
         <p class="xsmall-text col-7">Units Remaining</p>
-        <p class="precentage col-3">12 / 150</p>
+        <p class="precentage col-3">{{remainingUnits}} / 150</p>
         <div class="progress-bar m-auto">
             <div class="progress"></div>
         </div>
@@ -21,6 +21,6 @@
         <p class="col-10 m-auto">Allocation of a Sovereign Unit requires digital signature verification and identity attestation via Sovereign Guard.</p>
     </div>
     <div class="row ">
-        <button class="btn btn-warning col-10 m-auto my-5 shadow" [routerLink]="'/home/details/:id'"> INITIALIZE COMMITMENT <i class="bi bi-arrow-right"></i></button>
+        <button class="btn btn-warning col-10 m-auto my-5 shadow" [routerLink]="'/home/paypal/' + project.id + '&' + check"> INITIALIZE COMMITMENT <i class="bi bi-arrow-right"></i></button>
     </div>
 </div>

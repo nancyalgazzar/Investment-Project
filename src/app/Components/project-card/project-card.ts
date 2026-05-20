@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { Project } from '../../Models/projects';
 
 @Component({
   selector: 'app-project-card',
@@ -7,4 +8,6 @@ import { RouterLink } from "@angular/router";
   templateUrl: './project-card.html',
   styleUrl: './project-card.css',
 })
-export class ProjectCard {}
+export class ProjectCard {
+  @Input() data!: Project;
+}

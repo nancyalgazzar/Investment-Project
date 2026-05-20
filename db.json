@@ -69,16 +69,57 @@
     {
       "id": 101,
       "name": "The Meridian Exchange",
+      "description": "A luxury residential development in the heart of the city, offering high-end apartments and amenities.",
       "category": "Real Estate",
-      "total_price": 5000000
+      "total_price": 5000000,
+      "images": [
+        "Images/duck.gif",
+        "https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGF4dXJ5JTIwcmVzaWRlbmNlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "unit_price": 2000,
+      "location": "Dubai, United Arab Emirates"
     },
-    { "id": 102, "name": "Swiss Vault Gold", "category": "Gold", "total_price": 2000000 },
-    { "id": 103, "name": "Silver Trust", "category": "Gold", "total_price": 500000 }
+    {
+      "id": 102,
+      "name": "Gold Investment Fund",
+      "description": "A fund that invests in gold and gold-related assets, providing investors with exposure to the precious metal.",
+      "category": "Gold",
+      "total_price": 2000000,
+      "images": [
+        "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29sZCUyMGluJTIwaW52ZXN0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1565372912999-1c9a7d5c6e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29sZCUyMGluJTIwaW52ZXN0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "unit_price": 500,
+      "location": "London, United Kingdom"
+    },
+    {
+      "id": 103,
+      "name": "Tech Startup Equity",
+      "description": "An opportunity to invest in a promising tech startup, offering potential for high returns as the company grows.",
+      "category": "Stocks",
+      "total_price": 3000000,
+      "images": [
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaCUyMGluaXZlc3RtZW50fGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaCUyMGluaXZlc3RtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "unit_price": 1000,
+      "location": "San Francisco, USA"
+    }
   ],
   "user_projects": [
     { "id": 1, "userId": 1, "projectId": 101, "invested_amount": 700000 },
     { "id": 2, "userId": 1, "projectId": 102, "invested_amount": 300000 },
     { "id": 3, "userId": 1, "projectId": 103, "invested_amount": 400000 }
+  ],
+  "categories": [
+    { "id": 1, "name": "Real Estate" },
+    { "id": 2, "name": "Gold" },
+    { "id": 3, "name": "Stocks" },
+    { "id": 4, "name": "Bonds" },
+    { "id": 5, "name": "Cryptocurrency" }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

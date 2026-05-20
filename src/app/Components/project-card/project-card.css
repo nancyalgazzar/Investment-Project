@@ -19,6 +19,7 @@
     font-size: 30px;
     color: #f5f5f0;
     letter-spacing: 0px;
+    height: 15vh;
 }
 .card:hover{
     border: 1px solid #232323;

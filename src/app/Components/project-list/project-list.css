@@ -85,6 +85,12 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     letter-spacing: 1px;
 }
+.active-btn:hover{
+    /* background-color: #D4AF37; */
+    color: #232323;
+    font-size: 14px;
+    border-color: #232323;
+}
 .category-btn:active, .category-btn:hover{
     border-color: #D4AF37;
     color: #D4AF37;

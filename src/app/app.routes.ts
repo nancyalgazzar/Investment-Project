@@ -46,11 +46,11 @@ export const routes: Routes = [
         component: ProjectList,
       },
       {
-        path: 'details',
+        path: 'details/:id',
         component: DetailsCard,
       },
       {
-        path: 'details/:id',
+        path: 'paypal/:id&:check',
         component: PayPal,
       }
     ]
