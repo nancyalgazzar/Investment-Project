@@ -1,6 +1,7 @@
 import { ApiService } from './../../Services/api';
-import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
 import { AssetCard } from '../asset-card/asset-card';
+import { Subscription } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -9,25 +10,34 @@ import { AssetCard } from '../asset-card/asset-card';
   templateUrl: './assets-holdings.html',
   styleUrl: './assets-holdings.css',
 })
-export class AssetsHoldings implements OnInit {
+export class AssetsHoldings implements OnInit, OnDestroy {
   private apiService = inject(ApiService);
   private cdr = inject(ChangeDetectorRef);
+  private refreshSub!: Subscription;
 
   myInvestments: any[] = [];
 
   ngOnInit() {
-    const userStorage = localStorage.getItem('currentUser');
+    this.loadInvestments();
+    // React to new purchases
+    this.refreshSub = this.apiService.refresh$.subscribe(() => this.loadInvestments());
+  }
 
-    if (userStorage) {
-      const userObj = JSON.parse(userStorage);
+  ngOnDestroy() {
+    if (this.refreshSub) this.refreshSub.unsubscribe();
+  }
 
-      const currentUserId = Array.isArray(userObj) ? userObj[0].id : userObj.id;
+  loadInvestments() {
+    const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      const userObj = JSON.parse(userStr);
+      const user = Array.isArray(userObj) ? userObj[0] : userObj;
 
-      this.apiService.getUserInvestments(currentUserId).subscribe({
+      this.apiService.getUserInvestments(user.id).subscribe({
         next: (investments) => {
           this.myInvestments = investments;
           this.cdr.detectChanges();
-        },
+        }
       });
     }
   }

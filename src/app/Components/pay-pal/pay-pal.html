@@ -1,1 +1,25 @@
-<p>pay-pal works!</p>
+<div class="container d-flex justify-content-center align-items-center" style="height: 85dvh;">
+  <div class="card shadow-lg backgroundColor custom-border rounded-4" style="width: 100%; max-width: 550px;">
+
+    <div class="card-header border-0 bg-transparent text-center pt-4">
+      <h2 class="golden m-0 text-uppercase big-text fw-bold">Commit Capital</h2>
+      <p class="grey small-text mt-2">Finalize your allocation of {{ amount | currency:'USD' }}</p>
+    </div>
+
+    <div class="card-body px-5 pb-5 pt-3">
+      <div class="d-flex justify-content-between align-items-center dim-background p-3 rounded-3 mb-4 custom-border">
+        <p class="m-0 grey text-uppercase fs-8">Total Due</p>
+        <p class="m-0 golden fw-bold fs-5">{{ amount | currency:'USD' }}</p>
+      </div>
+
+      <hr class="custom-border my-4" />
+      <p class="text-center text-uppercase fs-8 grey mb-3">Select Payment Method</p>
+
+      @if (amount > 0 && payPalConfig) {
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      } @else {
+        <p class="text-danger text-center">Invalid amount detected. Please return to the market and try again.</p>
+      }
+    </div>
+  </div>
+</div>

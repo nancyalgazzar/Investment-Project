@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication-service';
+import { NgClass } from '@angular/common';
 
 type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk' | 'projects'|"addproject";
 @Component({
   selector: 'app-side-bar',
-  imports: [RouterLink],
+  imports: [RouterLink, NgClass],
   templateUrl: './side-bar.html',
   styleUrl: './side-bar.css',
 })

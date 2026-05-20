@@ -22,7 +22,8 @@
       "email": "amin@gmail.com",
       "password": "Amin@123",
       "role": "user",
-      "id": "wfG75sbXyr0"
+      "id": "wfG75sbXyr0",
+      "liquidity": 222100
     },
     {
       "firstName": "amira",
@@ -155,10 +156,30 @@
       "invested_amount": 300000
     },
     {
+      "id": "Yjlg1kGR_II",
+      "userId": "wfG75sbXyr0",
+      "projectId": 101,
+      "invested_amount": 6000
+    },
+    {
+      "id": "ER2IDzEc2qk",
+      "userId": "wfG75sbXyr0",
+      "projectId": 102,
+      "invested_amount": 2000
+    },
+    {
+      "id": "yqu3EDyLnd0",
+      "userId": "wfG75sbXyr0",
       "id": "3",
       "userId": "PeFyD7H",
       "projectId": 103,
-      "invested_amount": 400000
+      "invested_amount": 7000
+    },
+    {
+      "id": "Yh9jFcemEss",
+      "userId": "wfG75sbXyr0",
+      "projectId": 101,
+      "invested_amount": 2000
     }
   ],
   "categories": [
