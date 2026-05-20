@@ -9,7 +9,25 @@ import { Project } from '../../Models/projects';
   styleUrl: './units.css',
 })
 export class Units {
-  @Input() project!: Project ;
+    private _project!: Project;
+
+  // Intercept the project Input with a setter to prevent undefined startup errors
+
+  @Input()
+
+
+ set project(value: Project) {
+    this._project = value;
+    if (value) {
+      this.calcCheck();
+    }
+  }
+ get project(): Project {
+    return this._project;
+  }
+
+
+
   number : number = 1;
   remainingUnits : number = 1;
   check: number = 0 ;
@@ -19,9 +37,23 @@ export class Units {
     this.calcCheck();
   }
 
-  calcCheck() {
-    this.check = this.number * this.project.unit_price;
+  // calcCheck() {
+  //   this.check = this.number * this.project.unit_price;
+  // }
+
+ calcCheck() {
+    if (this.project && this.project.unit_price) {    // Ensure check is never calculated as NaN or 0 on startup
+      this.check = this.number * this.project.unit_price;
+    } else {
+      this.check = 0;
+    }
   }
+
+
+
+
+
+
   countplus(){
     if (this.number >= 50) return;
     this.number ++;

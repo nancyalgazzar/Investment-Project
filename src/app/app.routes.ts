@@ -63,7 +63,7 @@ export const routes: Routes = [
         component: DetailsCard,
       },
       {
-        path: 'paypal/:id&:check',
+        path: 'paypal/:id/:check',
         component: PayPal,
       },
       {

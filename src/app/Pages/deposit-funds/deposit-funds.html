@@ -31,8 +31,9 @@
       <hr class="custom-border my-4" />
 
       <p class="text-center text-uppercase fs-8 grey mb-3">Select Payment Method</p>
-      <div id="paypal-button-container" style="min-height: 150px; z-index: 1;"></div>
-
+      @if (payPalConfig) {
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      }
     </div>
   </div>
 </div>
