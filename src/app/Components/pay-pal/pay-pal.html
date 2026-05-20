@@ -7,18 +7,19 @@
     </div>
 
     <div class="card-body px-5 pb-5 pt-3">
-
       <div class="d-flex justify-content-between align-items-center dim-background p-3 rounded-3 mb-4 custom-border">
         <p class="m-0 grey text-uppercase fs-8">Total Due</p>
         <p class="m-0 golden fw-bold fs-5">{{ amount | currency:'USD' }}</p>
       </div>
 
       <hr class="custom-border my-4" />
-
       <p class="text-center text-uppercase fs-8 grey mb-3">Select Payment Method</p>
 
-      <ngx-paypal [config]="payPalConfig"></ngx-paypal>
-
+      @if (amount > 0 && payPalConfig) {
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      } @else {
+        <p class="text-danger text-center">Invalid amount detected. Please return to the market and try again.</p>
+      }
     </div>
   </div>
 </div>

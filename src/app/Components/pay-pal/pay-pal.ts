@@ -12,7 +12,7 @@ import { CurrencyPipe } from '@angular/common';
   templateUrl: './pay-pal.html',
   styleUrl: './pay-pal.css',
 })
-export class PayPal implements OnInit{
+export class PayPal implements OnInit {
   public payPalConfig?: IPayPalConfig;
 
   private route = inject(ActivatedRoute);
@@ -24,29 +24,30 @@ export class PayPal implements OnInit{
   amount!: number;
 
   ngOnInit(): void {
-    this.projectId = this.route.snapshot.paramMap.get('id') || '';    // Get the project ID and Amount from the URL route parameters
-
+    this.projectId = this.route.snapshot.paramMap.get('id') || '';
     this.amount = Number(this.route.snapshot.paramMap.get('check')) || 0;
 
-    this.initConfig();    // Initialize  PayPal configuration
-
+    // Safety check to prevent rendering with 0 values
+    if (this.amount > 0) {
+      this.initConfig();
+    }
   }
 
   private initConfig(): void {
     this.payPalConfig = {
       currency: 'USD',
-      clientId: 'sb', //sandbox. Replace with  Client ID later.
+      clientId: 'AcDuWpnV5P7HRs8zAW7n-jiIki5NkCWMt4mKDHxDzU4dpe5LOQRLfX7V8stqweQKXx0vri2qa7rDaDf0',
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [
           {
             amount: {
               currency_code: 'USD',
-              value: this.amount.toString(),
+              value: Number(this.amount).toFixed(2),
               breakdown: {
                 item_total: {
                   currency_code: 'USD',
-                  value: this.amount.toString()
+                  value: Number(this.amount).toFixed(2)
                 }
               }
             },
@@ -57,7 +58,7 @@ export class PayPal implements OnInit{
                 category: 'DIGITAL_GOODS',
                 unit_amount: {
                   currency_code: 'USD',
-                  value: this.amount.toString(),
+                  value: Number(this.amount).toFixed(2),
                 },
               }
             ]
@@ -92,20 +93,19 @@ export class PayPal implements OnInit{
 
   private saveInvestmentToDatabase() {
     const userStr = localStorage.getItem('currentUser');
-
-    let currentUserId: string | number = 1;     // Fallback to userId 1 if no logged in user is found | match DB logic
-
+    let currentUserId: string | number = 1;
 
     if (userStr) {
       const userObj = JSON.parse(userStr);
-      const user = Array.isArray(userObj) ? userObj[0] : userObj;      currentUserId = user.id;
+      const user = Array.isArray(userObj) ? userObj[0] : userObj;
+      currentUserId = user.id;
     }
 
     const newInvestment = {
-      id: Date.now().toString(), // Generate a unique ID
+      id: Date.now().toString(),
       userId: currentUserId,
       projectId: Number(this.projectId),
-      invested_amount: this.amount
+      invested_amount: Number(this.amount)
     };
 
     this.apiService.addInvestment(newInvestment).subscribe({
@@ -113,7 +113,8 @@ export class PayPal implements OnInit{
         this.notificationService.addmessage('Investment Successful! Asset added to holdings.', 'success');
         this.router.navigate(['/home/dashboard']);
       },
-      error: () => {
+      error: (err) => {
+        console.error('Database write error:', err);
         this.notificationService.addmessage('Payment received, but failed to update database.', 'error');
       }
     });

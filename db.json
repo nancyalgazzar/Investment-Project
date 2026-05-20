@@ -23,7 +23,7 @@
       "password": "Amin@123",
       "role": "user",
       "id": "wfG75sbXyr0",
-      "liquidity": 11000
+      "liquidity": 211000
     },
     {
       "firstName": "amira",
@@ -120,18 +120,17 @@
   ],
   "user_projects": [
     {
-      "id": 1,
+      "id": "1",
       "userId": "PeFyD7H",
       "projectId": 101,
       "invested_amount": 700000
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": "PeFyD7H",
       "projectId": 102,
       "invested_amount": 300000
     },
-
     {
       "id": "Yjlg1kGR_II",
       "userId": "wfG75sbXyr0",
@@ -153,23 +152,23 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Real Estate"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Gold"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Stocks"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Bonds"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Cryptocurrency"
     }
   ],
