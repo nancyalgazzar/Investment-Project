@@ -7,7 +7,7 @@ import { AssetCard } from '../asset-card/asset-card';
   selector: 'app-assets-holdings',
   imports: [AssetCard],
   templateUrl: './assets-holdings.html',
-  styleUrl: './assets-holdings.css'
+  styleUrl: './assets-holdings.css',
 })
 export class AssetsHoldings implements OnInit {
   private apiService = inject(ApiService);
@@ -16,11 +16,19 @@ export class AssetsHoldings implements OnInit {
   myInvestments: any[] = [];
 
   ngOnInit() {
-    this.apiService.getUserInvestments(1).subscribe({
-      next: (investments) => {
-        this.myInvestments = investments;
-        this.cdr.detectChanges();
-      }
-    });
+    const userStorage = localStorage.getItem('currentUser');
+
+    if (userStorage) {
+      const userObj = JSON.parse(userStorage);
+
+      const currentUserId = Array.isArray(userObj) ? userObj[0].id : userObj.id;
+
+      this.apiService.getUserInvestments(currentUserId).subscribe({
+        next: (investments) => {
+          this.myInvestments = investments;
+          this.cdr.detectChanges();
+        },
+      });
+    }
   }
 }

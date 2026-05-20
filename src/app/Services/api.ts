@@ -9,8 +9,7 @@ export class ApiService {
   private http = inject(HttpClient);
   private baseUrl = 'http://localhost:3000';
 
-  getUserInvestments(userId: number): Observable<any[]> {
-    // The &_expand=project trick combines the investment with the project details
+  getUserInvestments(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/user_projects?userId=${userId}&_expand=project`);
   }
 }
