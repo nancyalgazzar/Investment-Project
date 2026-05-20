@@ -64,6 +64,14 @@
       "password": "Fatma@123",
       "role": "admin",
       "id": "wxjd26M"
+    },
+    {
+      "firstName": "Omar",
+      "lastName": "Madbouly",
+      "email": "Omar@gmail.com",
+      "password": "Omar@123",
+      "role": "user",
+      "id": "PeFyD7H"
     }
   ],
   "projects": [
@@ -112,14 +120,14 @@
   ],
   "user_projects": [
     {
-      "id": "1",
-      "userId": 1,
+      "id": 1,
+      "userId": "PeFyD7H",
       "projectId": 101,
       "invested_amount": 700000
     },
     {
-      "id": "2",
-      "userId": 1,
+      "id": 2,
+      "userId": "PeFyD7H",
       "projectId": 102,
       "invested_amount": 300000
     },
@@ -150,23 +158,23 @@
   ],
   "categories": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Real Estate"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Gold"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Stocks"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Bonds"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Cryptocurrency"
     }
   ],

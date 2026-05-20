@@ -1,12 +1,12 @@
 <div class="login-container backgroundColor">
   <div class="login-card">
 
-    <h1 class="title">AURELIAN</h1>
+    <h1 class="title">Investment</h1>
     <p class="grey">Private Entry</p>
 
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
-      
+
       <div class="input-group">
         <label>Email</label>
 
@@ -23,7 +23,7 @@
         @if(email.invalid && email.touched){
             <p class="error">Valid email is required</p>
         }
-          
+
       </div>
 
       <!-- Password -->

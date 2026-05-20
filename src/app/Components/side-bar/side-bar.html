@@ -1,101 +1,135 @@
-<div class="backdrop d-md-none"
+<div
+  class="backdrop d-md-none"
   [class.backdrop-visible]="showSidebar()"
-  (click)="closeSidebar()">
-</div>
+  (click)="closeSidebar()"
+></div>
 
-<button class="btn golden-background d-md-none position-fixed bottom-0 start-0 z-3 rounded-circle"
-  type="button" (click)="openSidebar()">
+<button
+  class="btn golden-background d-md-none position-fixed bottom-0 start-0 z-3 rounded-circle"
+  type="button"
+  (click)="openSidebar()"
+>
   <i class="bi bi-list"></i>
 </button>
 
-<div class="backgroundColor right-border p-3 d-flex flex-column gap-3 justify-content-between sidebar"
+<div
+  class="backgroundColor right-border p-3 d-flex flex-column gap-3 justify-content-between sidebar"
   [class.sidebar-open]="showSidebar()"
-  style="overflow-y: auto;">
-
+  style="overflow-y: auto"
+>
   <!-- <button class="btn-close btn-close-white d-md-none align-self-end mb-2"
     (click)="closeSidebar()">
   </button> -->
 
   <div>
-    <h2 class="fw-bold golden text-uppercase mb-1 big-text">AURELIAN</h2>
-    <p class="text-uppercase grey m-0 small-text">MIDNIGHT SOVEREIGN</p>
+    <h2 class="fw-bold golden text-uppercase mb-1 big-text">Investment</h2>
+    <p class="text-uppercase grey m-0 small-text">..Money Talks..</p>
     <div class="d-flex flex-column gap-3 fs-6 fs-md-5 pt-5">
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'dashboard'"
-        (click)="select('dashboard')">
-        <i class="bi bi-view-stacked"
+        (click)="select('dashboard')"
+      >
+        <i
+          class="bi bi-view-stacked"
           [class.golden]="selected() == 'dashboard'"
-          [class.grey]="selected() != 'dashboard'"></i>
-        <span [class.golden]="selected() == 'dashboard'"
           [class.grey]="selected() != 'dashboard'"
-          [routerLink]="'/home/dashboard'">Dashboard</span>
+        ></i>
+        <span
+          [class.golden]="selected() == 'dashboard'"
+          [class.grey]="selected() != 'dashboard'"
+          [routerLink]="'/home/dashboard'"
+          >Dashboard</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'projects'"
-        (click)="select('projects')">
-        <i class="bi bi-fingerprint"
+        (click)="select('projects')"
+      >
+        <i
+          class="bi bi-fingerprint"
           [class.golden]="selected() == 'projects'"
-          [class.grey]="selected() != 'projects'"></i>
-        <span [class.golden]="selected() == 'projects'"
           [class.grey]="selected() != 'projects'"
-          [routerLink]="'/home/projects'">Projects</span>
+        ></i>
+        <span
+          [class.golden]="selected() == 'projects'"
+          [class.grey]="selected() != 'projects'"
+          [routerLink]="'/home/projects'"
+          >Projects</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'identity'"
-        (click)="select('identity')">
-        <i class="bi bi-fingerprint"
+        (click)="select('identity')"
+      >
+        <i
+          class="bi bi-fingerprint"
           [class.golden]="selected() == 'identity'"
-          [class.grey]="selected() != 'identity'"></i>
-        <span [class.golden]="selected() == 'identity'"
-          [class.grey]="selected() != 'identity'" >Identity</span>
+          [class.grey]="selected() != 'identity'"
+        ></i>
+        <span [class.golden]="selected() == 'identity'" [class.grey]="selected() != 'identity'"
+          >Identity</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'risk'"
-        (click)="select('risk')">
-        <i class="bi bi-pie-chart"
+        (click)="select('risk')"
+      >
+        <i
+          class="bi bi-pie-chart"
           [class.golden]="selected() == 'risk'"
-          [class.grey]="selected() != 'risk'"></i>
-        <span [class.golden]="selected() == 'risk'"
-          [class.grey]="selected() != 'risk'">Risk Profile</span>
+          [class.grey]="selected() != 'risk'"
+        ></i>
+        <span [class.golden]="selected() == 'risk'" [class.grey]="selected() != 'risk'"
+          >Risk Profile</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'profile'"
-        (click)="select('profile')">
-        <i class="bi bi-card-text"
+        (click)="select('profile')"
+      >
+        <i
+          class="bi bi-card-text"
           [class.golden]="selected() == 'profile'"
-          [class.grey]="selected() != 'profile'"></i>
-        <span [class.golden]="selected() == 'profile'"
-          [class.grey]="selected() != 'profile'" >Profile</span>
+          [class.grey]="selected() != 'profile'"
+        ></i>
+        <span [class.golden]="selected() == 'profile'" [class.grey]="selected() != 'profile'"
+          >Profile</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
+      <div
+        class="button d-flex gap-2 p-2 btn"
         [class.selected-background]="selected() == 'security'"
-        (click)="select('security')">
-        <i class="bi bi-shield-check"
+        (click)="select('security')"
+      >
+        <i
+          class="bi bi-shield-check"
           [class.golden]="selected() == 'security'"
-          [class.grey]="selected() != 'security'"></i>
-        <span [class.golden]="selected() == 'security'"
-          [class.grey]="selected() != 'security'" >Security</span>
+          [class.grey]="selected() != 'security'"
+        ></i>
+        <span [class.golden]="selected() == 'security'" [class.grey]="selected() != 'security'"
+          >Security</span
+        >
       </div>
-      <div class="button d-flex gap-2 p-2 btn"
-          (click)="logout()">
-
+      <div class="button d-flex gap-2 p-2 btn" (click)="logout()">
         <i class="bi bi-box-arrow-right grey"></i>
 
-        <span class="grey">
-          Sign Out
-        </span>
-
+        <span class="grey"> Sign Out </span>
       </div>
     </div>
   </div>
 
-  <div style="height: 15%;">
-    <hr class="border border-secondary">
+  <div style="height: 15%">
+    <hr class="border border-secondary" />
     <div class="d-flex gap-4">
-      <img class="rounded-circle" style="width: 3rem; height: 3rem;" src="Images/avatar.avif">
+      <img class="rounded-circle" style="width: 3rem; height: 3rem" src="Images/avatar.avif" />
       <div>
-        <p class="m-0 golden fw-bold middle-text">John Doe</p>
-        <p class="m-0 grey small-text">Engineer</p>
+        <p class="m-0 golden fw-bold middle-text">{{ userName }}</p>
+        <p class="m-0 grey small-text">{{ userRole }}</p>
       </div>
     </div>
   </div>

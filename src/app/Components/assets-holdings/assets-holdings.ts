@@ -7,7 +7,7 @@ import { AssetCard } from '../asset-card/asset-card';
   selector: 'app-assets-holdings',
   imports: [AssetCard],
   templateUrl: './assets-holdings.html',
-  styleUrl: './assets-holdings.css'
+  styleUrl: './assets-holdings.css',
 })
 export class AssetsHoldings implements OnInit {
   private apiService = inject(ApiService);

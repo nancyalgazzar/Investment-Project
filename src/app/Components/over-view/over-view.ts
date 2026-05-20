@@ -15,50 +15,59 @@ export class OverView implements OnInit {
   private cdr = inject(ChangeDetectorRef);
 
   activeAssetsCount: number = 0;
+  userName: string = 'Investor'; // <-- Added property for the dynamic greeting
 
   // Default blank state for the chart
   chartData: any = {
     labels: [],
-    datasets: [{
-      data: [0],
-      backgroundColor: ['#232323'],
-      cutout: '80%',
-    }],
+    datasets: [
+      {
+        data: [0],
+        backgroundColor: ['#232323'],
+        cutout: '80%',
+      },
+    ],
   };
 
   chartOptions = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
   };
 
 
   ngOnInit() {
-    // Get the current logged-in user
-    const userStr = localStorage.getItem('currentUser');
+    const userStorage = localStorage.getItem('currentUser');
 
-    if (userStr) {
-      const user = JSON.parse(userStr);
+    if (userStorage) {
+      const userObj = JSON.parse(userStorage);
 
-      // Pass the real user.id to the chart calculations
-      this.apiService.getUserInvestments(user.id).subscribe({
+      // Extract the full user object (whether it's inside an array or not)
+      const currentUser = Array.isArray(userObj) ? userObj[0] : userObj;
+
+      // Set the dynamic name and ID
+      this.userName = currentUser.firstName || 'Investor';
+      const currentUserId = currentUser.id;
+
+      this.apiService.getUserInvestments(currentUserId).subscribe({
         next: (investments) => {
-          this.activeAssetsCount = investments.length; // Counts how many projects you have
+          this.activeAssetsCount = investments.length;
 
           if (investments.length > 0) {
-            // This grabs JUST the money amounts to draw the chart slices
-            const variableDataPoints = investments.map(item => Number(item.invested_amount));
+            const variableDataPoints = investments.map((item) => Number(item.invested_amount));
 
             this.chartData = {
-              datasets: [{
-                data: variableDataPoints,
-                backgroundColor: ['#D4AF37', '#137ABF', '#4edea3'],
-                cutout: '80%',
-              }],
+              datasets: [
+                {
+                  data: variableDataPoints,
+                  backgroundColor: ['#D4AF37', '#137ABF', '#4edea3'],
+                  cutout: '80%',
+                },
+              ],
             };
           }
 
-          this.cdr.detectChanges(); // Tell Angular to redraw the chart!
-        }
+          this.cdr.detectChanges();
+        },
       });
     }
   }
@@ -67,7 +76,10 @@ export class OverView implements OnInit {
   centerTextPlugin: Plugin<'doughnut'> = {
     id: 'centerText',
     afterDraw(chart) {
-      const { ctx, chartArea: { top, width, height } } = chart;
+      const {
+        ctx,
+        chartArea: { top, width, height },
+      } = chart;
       ctx.save();
       ctx.font = '1em Arial';
       ctx.fillStyle = 'grey';
@@ -79,6 +91,6 @@ export class OverView implements OnInit {
       ctx.fillStyle = 'white';
       ctx.fillText('Active', width / 2, top + height / 2 + 20);
       ctx.restore();
-    }
+    },
   };
 }
