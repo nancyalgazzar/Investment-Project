@@ -9,6 +9,8 @@ import { Home } from './Pages/home/home';
 import { LandingComponent } from './Pages/landing/landing';
 import { userExistGuard } from './Guards/user-exist-guard';
 import { DepositFunds } from './Pages/deposit-funds/deposit-funds';
+import { CreateProject } from './Components/create-project/create-project';
+import { adminGuard } from './Guards/admin-guard';
 
 export const routes: Routes = [
   {
@@ -38,9 +40,15 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'addproject',
+        component: CreateProject,
+        canActivate: [adminGuard],
+      },
+      {
         path: 'dashboard',
         component: DashBoard, // Renders inside Home's <router-outlet>
       },
+
       {
         path: 'projects',
         component: ProjectList,
@@ -52,8 +60,8 @@ export const routes: Routes = [
       {
         path: 'paypal/:id&:check',
         component: PayPal,
-      }
-    ]
+      },
+    ],
   },
 
   // --- FALLBACK ---
@@ -65,6 +73,7 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: '',
+    pathMatch: "full"
   },
   {
     path: 'projects',

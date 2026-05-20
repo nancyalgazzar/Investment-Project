@@ -13,7 +13,7 @@
 </button>
 
 <div
-  class="backgroundColor right-border p-3 d-flex flex-column gap-3 justify-content-between sidebar"
+  class="backgroundColor right-border p-3 d-flex flex-column gap-3 justify-content-between sidebar scroll-container"
   [class.sidebar-open]="showSidebar()"
   style="overflow-y: auto"
 >
@@ -115,6 +115,21 @@
           >Security</span
         >
       </div>
+      @if(userRole =="Admin"){
+      <div
+        class="button d-flex gap-2 p-2 btn"
+        [class.selected-background]="selected() == 'addproject'"
+        (click)="select('addproject')" routerLink="addproject"
+      >
+        <i
+          class="bi bi-plus"
+          [class.golden]="selected() == 'addproject'"
+          [class.grey]="selected() != 'addproject'"
+        ></i>
+        <span [class.golden]="selected() == 'addproject'" [class.grey]="selected() != 'addproject'"
+          >Add Project</span
+        >
+      </div>}
       <div class="button d-flex gap-2 p-2 btn" (click)="logout()">
         <i class="bi bi-box-arrow-right grey"></i>
 

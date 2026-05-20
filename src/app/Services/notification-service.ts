@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { v4 as uuid } from 'uuid';
+import { message, msgType } from '../Models/NotificationMessage';
 
 @Injectable({
   providedIn: 'root',
