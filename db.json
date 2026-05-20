@@ -23,7 +23,7 @@
       "password": "Amin@123",
       "role": "user",
       "id": "wfG75sbXyr0",
-      "liquidity": 211000
+      "liquidity": 222000
     },
     {
       "firstName": "amira",
@@ -148,6 +148,12 @@
       "userId": "wfG75sbXyr0",
       "projectId": 103,
       "invested_amount": 7000
+    },
+    {
+      "id": "Yh9jFcemEss",
+      "userId": "wfG75sbXyr0",
+      "projectId": 101,
+      "invested_amount": 2000
     }
   ],
   "categories": [

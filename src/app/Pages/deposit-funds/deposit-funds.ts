@@ -26,7 +26,7 @@ export class DepositFunds implements OnInit {
   private initConfig(): void {
     this.payPalConfig = {
       currency: 'USD',
-      clientId: 'AcDuWpnV5P7HRs8zAW7n-jiIki5NkCWMt4mKDHxDzU4dpe5LOQRLfX7V8stqweQKXx0vri2qa7rDaDf0',
+      clientId: 'AcjcRfgnLnb9PjUnGpCUs9VSNqdL9dOPHrzrrPFTu_sY4rXJXuF3KnJyROc-dXi8q3PXocdgxQKvdTQT',
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [{

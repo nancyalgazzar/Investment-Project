@@ -32,7 +32,7 @@ export class PayPal implements OnInit {
       this.initConfig();
     }
   }
-
+// #region old PayPal Configuration
   private initConfig(): void {
     this.payPalConfig = {
       currency: 'USD',
@@ -90,8 +90,41 @@ export class PayPal implements OnInit {
       }
     };
   }
+// #endregion
 
-  private saveInvestmentToDatabase() {
+// #region new PayPal Configuration - Simplified to reduce validation errors
+//new
+// private initConfig(): void {
+//     this.payPalConfig = {
+//       currency: 'USD',
+//       clientId: 'AcjcRfgnLnb9PjUnGpCUs9VSNqdL9dOPHrzrrPFTu_sY4rXJXuF3KnJyROc-dXi8q3PXocdgxQKvdTQT',
+//       createOrderOnClient: (data) => <ICreateOrderRequest>{
+//         intent: 'CAPTURE',
+//         purchase_units: [
+//           {
+//             amount: {
+//               currency_code: 'USD',
+//               // Use fixed 2 decimals always
+//               value: Number(this.amount).toFixed(2)
+//               // Removed complex 'breakdown' object to reduce validation errors
+//             }
+//           }
+//         ]
+//       },
+//       advanced: { commit: 'true' },
+//       style: { label: 'paypal', layout: 'vertical', color: 'gold', shape: 'rect' },
+
+//       onClientAuthorization: (data) => {
+//         this.saveInvestmentToDatabase();
+//       },
+//       onError: err => {
+//         console.error('PayPal Error:', err);
+//       }
+//     };
+//   }
+// #endregion
+
+private saveInvestmentToDatabase() {
     const userStr = localStorage.getItem('currentUser');
     let currentUserId: string | number = 1;
 
