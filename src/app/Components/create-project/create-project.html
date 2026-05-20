@@ -71,7 +71,7 @@
       <select class="field-input field-select" id="projectcategory" formControlName="category">
         <option value="" selected disabled>Select a category</option>
         @for (i of categories(); track i.id) {
-          <option value="{{ i.id }}">{{ i.name }}</option>
+          <option value="{{ i.name }}">{{ i.name }}</option>
         }
       </select>
     </div>

@@ -60,4 +60,16 @@ export class ProjectList {
       this.projects = this.allProjects;
     }
   }
+
+  getAllProjects() {
+    this.projectService.getAllProjects().subscribe({
+      next: (projects) => {
+        this.projects = projects;
+        this.allProjects = projects;
+        this.selectedCategory = 'All';
+        this.search = '';
+        this.cdr.detectChanges();
+      }
+    })
+  }
 }
