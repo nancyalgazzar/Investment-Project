@@ -1,7 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { user_projects } from '../Models/user_projects';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +8,13 @@ import { user_projects } from '../Models/user_projects';
 export class ApiService {
   private http = inject(HttpClient);
   private baseUrl = 'http://localhost:3000';
+
+  private refreshSource = new Subject<void>();
+  refresh$ = this.refreshSource.asObservable();
+
+  triggerRefresh() {
+    this.refreshSource.next();
+  }
 
   getUserInvestments(userId: string | number): Observable<any[]> {
     // The &_expand=project trick combines the investment with the project details

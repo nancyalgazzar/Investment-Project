@@ -2,6 +2,8 @@ import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from './../../Services/api';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
@@ -12,6 +14,7 @@ import { RouterLink } from '@angular/router';
 export class Header implements OnInit {
   private apiService = inject(ApiService);
   private cdr = inject(ChangeDetectorRef);
+  private refreshSub!: Subscription;
 
   totalNetWorth: number = 0;
   avaliableLiquidity: number = 0;
@@ -19,16 +22,17 @@ export class Header implements OnInit {
 
    ngOnInit() {
     this.loadUserData();
+
+    this.refreshSub = this.apiService.refresh$.subscribe(() => {    // Listen for any payment updates and silently reload data
+
+      this.loadUserData();
+    });
+  }
+  ngOnDestroy() {
+    if (this.refreshSub) this.refreshSub.unsubscribe();
   }
 
   loadUserData() {
-    // const userStr = localStorage.getItem('currentUser');
-
-    // if (userStr) {
-    //   const user = JSON.parse(userStr);
-
-    //   // Fetch real liquidity from the Users table
-    //   this.apiService.getUser(user.id).subscribe({
     const userStr = localStorage.getItem('currentUser');
     if (userStr) {
       const userObj = JSON.parse(userStr);

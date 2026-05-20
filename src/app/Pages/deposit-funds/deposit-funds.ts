@@ -4,6 +4,7 @@ import { CurrencyPipe } from '@angular/common';
 import { IPayPalConfig, ICreateOrderRequest, NgxPayPalModule } from 'ngx-paypal';
 import { NotificationService } from '../../Services/notification-service';
 import { ApiService } from '../../Services/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-deposit-funds',
@@ -18,6 +19,7 @@ export class DepositFunds implements OnInit {
   public payPalConfig?: IPayPalConfig;
   private notificationService = inject(NotificationService);
   private apiService = inject(ApiService);
+private router = inject(Router);
 
   ngOnInit() {
     this.initConfig();
@@ -86,10 +88,12 @@ export class DepositFunds implements OnInit {
 
           this.apiService.updateUserLiquidity(user.id, newLiquidity).subscribe({
             next: () => {
+              this.apiService.triggerRefresh();
               this.notificationService.addmessage(
                 `Deposit of $${this.depositAmount} successful! Thank you, ${details.payer.name.given_name}.`,
                 'success'
               );
+              this.router.navigate(['/home/dashboard']);
             },
             error: (err) => {
               console.error('Failed to patch user balance update:', err);

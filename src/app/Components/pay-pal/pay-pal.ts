@@ -143,6 +143,7 @@ private saveInvestmentToDatabase() {
 
     this.apiService.addInvestment(newInvestment).subscribe({
       next: () => {
+        this.apiService.triggerRefresh();
         this.notificationService.addmessage('Investment Successful! Asset added to holdings.', 'success');
         this.router.navigate(['/home/dashboard']);
       },
