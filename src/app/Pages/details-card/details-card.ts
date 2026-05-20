@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, inject, Input } from '@angular/core';
-import { Units } from "../units/units";
 import { RouterLink } from '@angular/router';
 import { ProjectsService } from '../../Services/projects-service';
 import { Project } from '../../Models/projects';
+import { Units } from '../../Components/units/units';
 
 @Component({
   selector: 'app-details-card',

@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { Header } from "../header/header";
-import { SideBar } from "../side-bar/side-bar";
+import { Header } from "../../Components/header/header";
+import { SideBar } from "../../Components/side-bar/side-bar";
 import { RouterOutlet, RouterLinkActive } from "@angular/router";
-import { ProjectCard } from "../project-card/project-card";
+import { ProjectCard } from "../../Components/project-card/project-card";
 import { ProjectsService } from '../../Services/projects-service';
 import { Project } from '../../Models/projects';
 import { Category } from '../../Models/categories';
@@ -21,6 +21,8 @@ export class ProjectList {
   categories: Category[] = [];
 
   selectedCategory: string = '';
+
+  search: string = '';
 
   ngOnInit() {
     this.projectService.getAllProjects().subscribe({
