@@ -6,10 +6,11 @@ import { ProjectCard } from "../../Components/project-card/project-card";
 import { ProjectsService } from '../../Services/projects-service';
 import { Project } from '../../Models/projects';
 import { Category } from '../../Models/categories';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-project-list',
-  imports: [Header, SideBar, RouterOutlet, ProjectCard, RouterLinkActive],
+  imports: [Header, SideBar, RouterOutlet, ProjectCard, RouterLinkActive, FormsModule],
   templateUrl: './project-list.html',
   styleUrl: './project-list.css',
 })
@@ -18,6 +19,7 @@ export class ProjectList {
   private cdr = inject(ChangeDetectorRef);
 
   projects: Project[] = [];
+  allProjects: Project[] = [];
   categories: Category[] = [];
 
   selectedCategory: string = '';
@@ -28,6 +30,7 @@ export class ProjectList {
     this.projectService.getAllProjects().subscribe({
       next: (projects) => {
         this.projects = projects;
+        this.allProjects = projects;
         this.cdr.detectChanges();
       }
     });
@@ -42,9 +45,19 @@ export class ProjectList {
     this.projectService.getProjectsByCategory(name).subscribe({
       next: (projects) => {
         this.projects = projects;
+        this.allProjects = projects;
         this.cdr.detectChanges();
       }
     });
     this.selectedCategory = name;
+  }
+
+  searchByProjectName() {
+    const value = this.search.toLowerCase().trim();
+    if(value) {
+      this.projects = this.allProjects.filter((project: Project) => project.name?.toLowerCase().includes(value));
+    } else {
+      this.projects = this.allProjects;
+    }
   }
 }
