@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication-service';
 
-type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk' | 'projects';
+type SidebarItem = 'dashboard' | 'security' | 'profile' | 'identity' | 'risk' | 'projects'|"addproject";
 @Component({
   selector: 'app-side-bar',
   imports: [RouterLink],
@@ -16,7 +16,7 @@ export class SideBar {
   // Variables to hold the dynamic user data
   userName: string = 'Investor';
   userRole: string = 'User';
-
+  
   constructor(
     private authService: AuthenticationService,
     private router: Router,

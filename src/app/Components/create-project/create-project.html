@@ -1,0 +1,173 @@
+<div class="form-wrapper scroll-container" >
+  <div class="form-header">
+    <div class="golden-line"></div>
+    <h1>Create Project</h1>
+    <p>Fill in the details below to create a new project</p>
+  </div>
+
+  <form [formGroup]="FormObject" (ngSubmit)="onSubmit()" #form>
+    <div class="field-group">
+      <label for="projectname" class="field-label">Project Name</label>
+      <input
+        type="text"
+        class="field-input"
+        id="projectname"
+        placeholder="Enter project name"
+        formControlName="name"
+      />
+      @if (
+        FormObject.get('name')?.invalid &&
+        FormObject.get('name')?.dirty &&
+        FormObject.get('name')?.errors?.['required']
+      ) {
+        <li class="field-error">the name is required</li>
+      } @else {
+        @if (FormObject.get('name')?.invalid && FormObject.get('name')?.dirty) {
+          <li class="field-error">the name field is invalid</li>
+        }
+        @if (
+          FormObject.get('name')?.invalid &&
+          FormObject.get('name')?.dirty &&
+          FormObject.get('name')?.errors?.['maxlength']
+        ) {
+          <li class="field-error">the name is too long</li>
+        }
+        @if (
+          FormObject.get('name')?.invalid &&
+          FormObject.get('name')?.dirty &&
+          FormObject.get('name')?.errors?.['minlength']
+        ) {
+          <li class="field-error">the name is too short</li>
+        }
+      }
+    </div>
+
+    <div class="field-group">
+      <label for="projectdescription" class="field-label">Description</label>
+      <textarea
+        class="field-input field-textarea"
+        id="projectdescription"
+        placeholder="Enter the description"
+        formControlName="description"
+      ></textarea>
+      @if (
+        FormObject.get('description')?.invalid &&
+        FormObject.get('description')?.dirty &&
+        FormObject.get('description')?.errors?.['required']
+      ) {
+        <li class="field-error">the Description is required</li>
+      }
+      @if (
+        FormObject.get('description')?.invalid &&
+        FormObject.get('description')?.dirty &&
+        FormObject.get('description')?.errors?.['maxlength']
+      ) {
+        <li class="field-error">the description is too long</li>
+      }
+    </div>
+
+    <div class="field-group">
+      <label for="projectcategory" class="field-label">Category</label>
+      <select class="field-input field-select" id="projectcategory" formControlName="category">
+        <option value="" selected disabled>Select a category</option>
+        @for (i of categories(); track i.id) {
+          <option value="{{ i.id }}">{{ i.name }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label for="projectlocation" class="field-label">Location</label>
+      <input
+        class="field-input"
+        id="projectlocation"
+        placeholder="Enter location"
+        formControlName="location"
+      />
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="totalprice" class="field-label">Total Price</label>
+        <input
+          type="number"
+          class="field-input"
+          id="totalprice"
+          placeholder="Enter total price"
+          formControlName="totalPrice"
+        />
+        @if (
+          FormObject.get('totalPrice')?.invalid &&
+          FormObject.get('totalPrice')?.dirty &&
+          FormObject.get('totalPrice')?.hasError("required")
+        ) {
+          <li class="field-error">the total price is required</li>
+        } @else {
+          @if (FormObject.get('totalPrice')?.invalid && FormObject.get('totalPrice')?.dirty) {
+            <li class="field-error">the total price is invalid</li>
+          }
+          @if (
+            FormObject.get('totalPrice')?.invalid &&
+            FormObject.get('totalPrice')?.dirty &&
+            FormObject.get('totalPrice')?.hasError("min")
+          ) {
+            <li class="field-error">the price can't be negative</li>
+          }
+        }
+      </div>
+
+      <div class="field-group">
+        <label for="unitprice" class="field-label">Unit Price</label>
+        <input
+          type="number"
+          class="field-input"
+          id="unitprice"
+          placeholder="Enter unit price"
+          formControlName="unitPrice"
+        />
+        @if (
+          FormObject.get('unitPrice')?.invalid &&
+          FormObject.get('unitPrice')?.dirty &&
+          FormObject.get('unitPrice')?.hasError("min")
+        ) {
+          <li class="field-error">the price can't be negative</li>
+        }
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Image URLs</label>
+      <div formArrayName="imageUrls">
+        <div class="images-list">
+          @for (item of imagesURLS.controls; track item) {
+            <div class="image-row">
+              <input
+                type="text"
+                class="field-input"
+                [formControlName]="$index"
+                placeholder="Enter image URL"
+              />
+              @if ($index > 0) {
+                <button type="button" (click)="RemoveImageURL($index)" class="remove-btn">✕</button>
+              }
+            </div>
+            @if (imagesURLS.at($index).hasError('required') && imagesURLS.at($index).dirty) {
+              <li class="field-error">the image URl is required, at least enter one URL</li>
+            }
+            @if ( imagesURLS.at($index).hasError("pattern")&& imagesURLS.at($index).dirty ) {
+              <li class="field-error">the image URl is invalid</li>
+            }
+          }
+        </div>
+      </div>
+      <button type="button" (click)="AddImageURL()" class="add-image-btn">+ Add Image URL</button>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-cancel" (click)="Cancel()">Cancel</button>
+      <button type="submit" class="btn-submit" [disabled]="FormObject.invalid">
+        Create Project
+      </button>
+    </div>
+  </form>
+</div>
