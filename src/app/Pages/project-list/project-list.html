@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="container m-5 mt-2">
+  <div class="container m-2 mt-2 justify-content-center">
     <p class="c1 f-big">Primary Marketplace</p>
     <div class="row col-lg-12 justify-content-between">
       <p class="col-lg-6 c2">
@@ -10,7 +10,7 @@
         <div class="wrapper">
           <div class="search col-lg-8 col-10">
             <i class="bi bi-search search-icon"></i>
-            <input type="text" placeholder="Search by location, industry, yield..." />
+            <input type="text" placeholder="Search by location, industry, yield..." [(ngModel)]="search" (input)="searchByProjectName()"/>
           </div>
           <button class="filter-btn col-lg-4 col-2">
             <i class="bi bi-funnel"></i>
@@ -19,32 +19,26 @@
       </div>
     </div>
     <div class="row col-lg-12 my-5 category">
+      <button
+    class="col-lg-1 col-3 category-btn"
+    (click)="getAllProjects()"
+    [class.active-btn]="selectedCategory === 'All'"
+  >
+    All
+  </button>
       @for(cate of categories; track $index) {
         <button class="col-lg-2 col-3 category-btn" (click)="filter(cate.name)" [class.active-btn]="selectedCategory === cate.name">
           {{cate.name}}
         </button>
       }
-      <!-- <button class="col-lg-2 col-3 active-btn">All Assets</button>
-      <button class="col-lg-2 col-3 category-btn">Real Estate</button>
-      <button class="col-lg-2 col-3 category-btn">Venture Capital</button>
-      <button class="col-lg-2 col-3 category-btn">Art & Collectibles</button>
-      <button class="col-lg-2 col-3 category-btn">Private Equity</button> -->
+      
     </div>
     <div class="row">
       @for(project of projects; track $index) {
-        <div class="col-lg-4 col-10 my-5">
+        <div class="col-12 col-sm-6 col-xl-4 mb-4 d-flex justify-content-center">
           <app-project-card [data]="project"></app-project-card>
         </div>
       }
-        <!-- <div class=" col-lg-4 col-10 my-5">
-            <app-project-card></app-project-card>
-        </div>
-        <div class=" col-lg-4 col-10 my-5">
-            <app-project-card></app-project-card>
-        </div>
-        <div class=" col-lg-4 col-10 my-5">
-            <app-project-card></app-project-card>
-        </div> -->
     </div>
   </div>
 </div>

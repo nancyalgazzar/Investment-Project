@@ -95,3 +95,84 @@
     border-color: #D4AF37;
     color: #D4AF37;
 }
+
+
+/* Add at the end of existing file */
+
+/* Responsive Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a8a8a;
+  grid-column: 1 / -1;
+}
+
+.empty-state i {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #D4AF37;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .f-big {
+    font-size: 2rem;
+  }
+  
+  .category {
+    flex-wrap: wrap;
+  }
+  
+  .category-btn {
+    flex: 1 0 auto;
+    min-width: calc(33.33% - 10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .f-big {
+    font-size: 1.5rem;
+  }
+  
+  .category-btn {
+    min-width: calc(50% - 8px);
+    font-size: 12px;
+  }
+}
