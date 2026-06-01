@@ -63,7 +63,8 @@
       "email": "fatma@gmail.com",
       "password": "Fatma@123",
       "role": "admin",
-      "id": "wxjd26M"
+      "id": "wxjd26M",
+      "liquidity": 10000
     },
     {
       "firstName": "Omar",
@@ -71,7 +72,17 @@
       "email": "Omar@gmail.com",
       "password": "Omar@123",
       "role": "user",
-      "id": "PeFyD7H"
+      "id": "PeFyD7H",
+      "liquidity": 1000
+    },
+    {
+      "firstName": "Omar",
+      "lastName": "maohamed",
+      "email": "mohamed@gmail.com",
+      "password": "Omar@1234",
+      "role": "admin",
+      "liquidity": 0,
+      "id": "5BAqPUA"
     }
   ],
   "projects": [
@@ -140,6 +151,18 @@
       "images": [
         "https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
+    },
+    {
+      "id": "8uoqC4D",
+      "name": "The Spine",
+      "description": "new desc",
+      "category": "Bonds",
+      "location": "Cairo, Egypt",
+      "price": 50000,
+      "unit_price": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
     }
   ],
   "user_projects": [
@@ -168,8 +191,6 @@
       "invested_amount": 2000
     },
     {
-      "id": "yqu3EDyLnd0",
-      "userId": "wfG75sbXyr0",
       "id": "3",
       "userId": "PeFyD7H",
       "projectId": 103,
@@ -180,6 +201,30 @@
       "userId": "wfG75sbXyr0",
       "projectId": 101,
       "invested_amount": 2000
+    },
+    {
+      "id": "AGFOiZ3BH1s",
+      "userId": "PeFyD7H",
+      "projectId": 101,
+      "invested_amount": 4000
+    },
+    {
+      "id": "1780296855473",
+      "userId": "PeFyD7H",
+      "projectId": 103,
+      "invested_amount": 2000
+    },
+    {
+      "id": "1780298652925",
+      "userId": "wxjd26M",
+      "projectId": 101,
+      "invested_amount": 6000
+    },
+    {
+      "id": "1780298756929",
+      "userId": "wxjd26M",
+      "projectId": null,
+      "invested_amount": 297
     }
   ],
   "categories": [

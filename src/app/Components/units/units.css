@@ -13,6 +13,8 @@
     padding: 20px;
     padding-top: 40px;
     overflow: hidden;
+    margin-top: 260px;
+    margin-left: 90px;
 }
 .xsmall-text{
     font-size: 10px;
@@ -52,7 +54,7 @@
 .progress{
     background-color: #D4AF37;
     border-radius: 15px;
-    text-align: start;  
+    text-align: start;
     width: 90%;
 }
 .staking-units{
