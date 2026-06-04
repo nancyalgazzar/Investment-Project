@@ -19,7 +19,7 @@ app.post('/chat', async (req, res) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'deepseek/deepseek-v4-flash:free',
+        model: 'meta-llama/Llama-4-Scout-17B-16E-Instruct:groq',
         messages: [
           {
             role: 'system',
